@@ -5,11 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
-
-interface HeaderProps {
-  language: 'ca' | 'es' | 'en'
-  setLanguage: (lang: 'ca' | 'es' | 'en') => void
-}
+import { useLanguage } from '@/hooks/use-language'
 
 const navigation = {
   ca: {
@@ -38,22 +34,23 @@ const navigation = {
   }
 }
 
-export default function Header({ language, setLanguage }: HeaderProps) {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { language, setLanguage } = useLanguage()
   const nav = navigation[language]
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src="/images/logo.png"
               alt="Autoescola Fran en Salou"
-              width={120}
-              height={60}
-              className="h-12 w-auto"
+              width={160}
+              height={80}
+              className="h-32 w-auto"
             />
           </Link>
 
@@ -81,9 +78,14 @@ export default function Header({ language, setLanguage }: HeaderProps) {
             <div className="flex items-center space-x-2">
               <button
                 onClick={() => setLanguage('ca')}
-                className={`w-8 h-6 rounded ${language === 'ca' ? 'ring-2 ring-red-600' : ''}`}
+                className={`rounded `}
               >
-                🏴󠁥󠁳󠁣󠁴󠁿
+                <Image
+                  src="/catalonia-flag.svg"
+                  alt="Bandera de Catalunya"
+                  width={20}
+                  height={14}
+                />
               </button>
               <button
                 onClick={() => setLanguage('es')}
@@ -134,9 +136,15 @@ export default function Header({ language, setLanguage }: HeaderProps) {
               <div className="flex items-center space-x-2 pt-4">
                 <button
                   onClick={() => setLanguage('ca')}
-                  className={`w-8 h-6 rounded ${language === 'ca' ? 'ring-2 ring-red-600' : ''}`}
+                  className={`w-8 h-6 rounded overflow-hidden ${language === 'ca' ? 'ring-2 ring-red-600' : ''}`}
                 >
-                  🏴󠁥󠁳󠁣󠁴󠁿
+                  <Image
+                    src="/catalonia-flag.svg"
+                    alt="Bandera de Catalunya"
+                    width={32}
+                    height={24}
+                    className="w-full h-full object-cover"
+                  />
                 </button>
                 <button
                   onClick={() => setLanguage('es')}

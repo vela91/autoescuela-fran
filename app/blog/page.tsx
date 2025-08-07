@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import { useLanguage } from '@/hooks/use-language'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Calendar, User, ArrowRight } from 'lucide-react'
@@ -220,7 +221,7 @@ const blogPosts = {
 }
 
 export default function BlogPage() {
-  const [language, setLanguage] = useState<'ca' | 'es' | 'en'>('ca')
+  const { language } = useLanguage()
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   
   const t = translations[language]
@@ -242,7 +243,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header language={language} setLanguage={setLanguage} />
+      <Header />
       
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-r from-yellow-400 to-yellow-500">
@@ -344,7 +345,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <Footer language={language} />
+      <Footer />
     </div>
   )
 }

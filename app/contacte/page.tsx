@@ -3,11 +3,12 @@
 import { useState } from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import { useLanguage } from '@/hooks/use-language'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { MapPin, Mail, MessageCircle, Clock } from 'lucide-react'
+import { MapPin, Mail, MessageCircle, Clock, Phone } from 'lucide-react'
 
 const translations = {
   ca: {
@@ -17,8 +18,10 @@ const translations = {
     address: "Adreça",
     addressText: "Carrer Principal, 123\n43840 Salou, Tarragona",
     email: "Correu Electrònic",
+    landline: "Telèfon Fix",
+    landlineText: "977 017 165",
     whatsapp: "WhatsApp",
-    whatsappText: "(Número per definir)",
+    whatsappText: "610 777 027",
     schedule: "Horari d'Oficina",
     scheduleText: "Dilluns a Divendres: 9:00 - 19:00\nDissabtes: 9:00 - 14:00",
     contactForm: "Formulari de Contacte",
@@ -36,8 +39,10 @@ const translations = {
     address: "Dirección",
     addressText: "Calle Principal, 123\n43840 Salou, Tarragona",
     email: "Correo Electrónico",
+    landline: "Teléfono Fijo",
+    landlineText: "977 017 165",
     whatsapp: "WhatsApp", 
-    whatsappText: "(Número por definir)",
+    whatsappText: "610 777 027",
     schedule: "Horario de Oficina",
     scheduleText: "Lunes a Viernes: 9:00 - 19:00\nSábados: 9:00 - 14:00",
     contactForm: "Formulario de Contacto",
@@ -55,8 +60,10 @@ const translations = {
     address: "Address",
     addressText: "Main Street, 123\n43840 Salou, Tarragona",
     email: "Email",
+    landline: "Landline",
+    landlineText: "977 017 165",
     whatsapp: "WhatsApp",
-    whatsappText: "(Number to be defined)",
+    whatsappText: "610 777 027",
     schedule: "Office Hours",
     scheduleText: "Monday to Friday: 9:00 - 19:00\nSaturdays: 9:00 - 14:00",
     contactForm: "Contact Form",
@@ -70,7 +77,7 @@ const translations = {
 }
 
 export default function ContactPage() {
-  const [language, setLanguage] = useState<'ca' | 'es' | 'en'>('ca')
+  const { language } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -96,7 +103,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header language={language} setLanguage={setLanguage} />
+      <Header />
       
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-r from-yellow-400 to-yellow-500">
@@ -152,10 +159,29 @@ export default function ContactPage() {
                 <Card>
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
+                      <Phone className="w-6 h-6 text-red-600 mt-1" />
+                      <div>
+                        <h3 className="font-semibold text-gray-800 mb-2">{t.landline}</h3>
+                        <p className="text-gray-600">{t.landlineText}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
                       <MessageCircle className="w-6 h-6 text-red-600 mt-1" />
                       <div>
                         <h3 className="font-semibold text-gray-800 mb-2">{t.whatsapp}</h3>
-                        <p className="text-gray-600">{t.whatsappText}</p>
+                        <a 
+                          href="https://wa.me/34610777027"
+                          className="text-red-600 hover:text-red-700 transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {t.whatsappText}
+                        </a>
                       </div>
                     </div>
                   </CardContent>
@@ -285,7 +311,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Footer language={language} />
+      <Footer />
     </div>
   )
 }

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import { useLanguage } from '@/hooks/use-language'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -22,6 +23,9 @@ const translations = {
     },
     featuredLicenses: "Permisos Destacats",
     testimonials: "Testimonis",
+    locationTitle: "Troba'ns a Salou",
+    locationDescription: "Visita'ns a la nostra autoescola al cor de Salou. Estem aquí per ajudar-te a aconseguir el teu carnet de conduir.",
+    getDirectionsButton: "Com arribar",
     finalCta: "A punt per començar a conduir?",
     finalCtaButton: "CONTACTA'NS"
   },
@@ -36,6 +40,9 @@ const translations = {
     },
     featuredLicenses: "Permisos Destacados",
     testimonials: "Testimonios",
+    locationTitle: "Encuéntranos en Salou",
+    locationDescription: "Visítanos en nuestra autoescuela en el corazón de Salou. Estamos aquí para ayudarte a conseguir tu carnet de conducir.",
+    getDirectionsButton: "Cómo llegar",
     finalCta: "¿Listo para empezar a conducir?",
     finalCtaButton: "CONTÁCTANOS"
   },
@@ -50,6 +57,9 @@ const translations = {
     },
     featuredLicenses: "Featured Licenses",
     testimonials: "Testimonials",
+    locationTitle: "Find us in Salou",
+    locationDescription: "Visit us at our driving school in the heart of Salou. We're here to help you get your driver's license.",
+    getDirectionsButton: "Get directions",
     finalCta: "Ready to start driving?",
     finalCtaButton: "CONTACT US"
   }
@@ -110,7 +120,7 @@ const testimonials = {
 }
 
 export default function HomePage() {
-  const [language, setLanguage] = useState<'ca' | 'es' | 'en'>('ca')
+  const { language } = useLanguage()
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const t = translations[language]
   const currentTestimonials = testimonials[language]
@@ -125,7 +135,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header language={language} setLanguage={setLanguage} />
+      <Header />
       
       {/* Hero Banner */}
       <section className="relative h-[600px] bg-gradient-to-r from-yellow-400 to-yellow-500 flex items-center justify-center overflow-hidden">
@@ -292,6 +302,40 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Location Map */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-gray-800">{t.locationTitle}</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">{t.locationDescription}</p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.8!2d1.1416!3d41.0766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a14b8a8a8a8a8a%3A0x8a8a8a8a8a8a8a8a!2sCarrer%20del%20Francol%C3%AD%2C%208%2C%2043840%20Salou%2C%20Tarragona%2C%20Spain!5e0!3m2!1sen!2ses!4v1640995200000"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Autoescola Fran - Salou"
+                ></iframe>
+              </div>
+              <div className="p-6 text-center">
+                <Button 
+                  className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg font-semibold rounded-lg shadow-lg"
+                  onClick={() => window.open('https://share.google/C4VGInQwzp438C9Ev', '_blank')}
+                >
+                  {t.getDirectionsButton}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-16 bg-black text-white">
         <div className="container mx-auto px-4 text-center">
@@ -304,7 +348,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Footer language={language} />
+      <Footer />
     </div>
   )
 }

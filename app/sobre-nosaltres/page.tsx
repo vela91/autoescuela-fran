@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import { useLanguage } from '@/hooks/use-language'
 import { Card, CardContent } from '@/components/ui/card'
 import { CheckCircle, Users, Car, Award, Clock } from 'lucide-react'
 import Image from 'next/image'
@@ -71,12 +72,12 @@ const translations = {
 }
 
 export default function AboutPage() {
-  const [language, setLanguage] = useState<'ca' | 'es' | 'en'>('ca')
+  const { language } = useLanguage()
   const t = translations[language]
 
   return (
     <div className="min-h-screen bg-white">
-      <Header language={language} setLanguage={setLanguage} />
+      <Header />
       
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-r from-yellow-400 to-yellow-500">
@@ -163,7 +164,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Footer language={language} />
+      <Footer />
     </div>
   )
 }

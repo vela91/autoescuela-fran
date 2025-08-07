@@ -1,10 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Facebook, Instagram, MessageCircle } from 'lucide-react'
-
-interface FooterProps {
-  language: 'ca' | 'es' | 'en'
-}
+import { useLanguage } from '@/hooks/use-language'
 
 const footerTranslations = {
   ca: {
@@ -30,7 +29,8 @@ const footerTranslations = {
   }
 }
 
-export default function Footer({ language }: FooterProps) {
+export default function Footer() {
+  const { language } = useLanguage()
   const t = footerTranslations[language]
 
   return (
@@ -40,11 +40,11 @@ export default function Footer({ language }: FooterProps) {
           {/* Logo & Info */}
           <div className="col-span-1">
             <Image
-              src="/images/logo.png"
+              src="/logo.png"
               alt="Autoescola Fran en Salou"
               width={120}
               height={60}
-              className="h-12 w-auto mb-4 brightness-0 invert"
+              className="h-12 w-auto mb-4"
             />
             <p className="text-gray-300 text-sm">
               La teva autoescola de confiança a Salou
@@ -73,9 +73,14 @@ export default function Footer({ language }: FooterProps) {
                   autoescolafransalou@gmail.com
                 </a>
               </p>
-              <div className="flex items-center space-x-2">
-                <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp: (Número per definir)</span>
+              <div className="space-y-2">
+                <p>Teléfono fijo: 977 017 165</p>
+                <div className="flex items-center space-x-2">
+                  <MessageCircle className="w-4 h-4" />
+                  <a href="https://wa.me/34610777027" className="hover:text-yellow-400 transition-colors">
+                    WhatsApp: 610 777 027
+                  </a>
+                </div>
               </div>
             </div>
           </div>
