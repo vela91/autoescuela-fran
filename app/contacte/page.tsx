@@ -102,52 +102,52 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       <Header />
-      
+
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-yellow-400 to-yellow-500">
+      <section className="py-16 bg-black border-b border-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-4">
             {t.title}
           </h1>
-          <p className="text-xl text-black/80 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             {t.subtitle}
           </p>
         </div>
       </section>
 
       {/* Contact Content */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
-            
+
             {/* Contact Information */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-8">{t.contactInfo}</h2>
+              <h2 className="text-3xl font-bold text-white mb-8">{t.contactInfo}</h2>
               
               <div className="space-y-6">
-                <Card>
+                <Card className="bg-gray-800 border-gray-700">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <MapPin className="w-6 h-6 text-red-600 mt-1" />
+                      <MapPin className="w-6 h-6 text-yellow-400 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-800 mb-2">{t.address}</h3>
-                        <p className="text-gray-600 whitespace-pre-line">{t.addressText}</p>
+                        <h3 className="font-semibold text-white mb-2">{t.address}</h3>
+                        <p className="text-gray-300 whitespace-pre-line">{t.addressText}</p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="bg-gray-800 border-gray-700">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <Mail className="w-6 h-6 text-red-600 mt-1" />
+                      <Mail className="w-6 h-6 text-yellow-400 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-800 mb-2">{t.email}</h3>
-                        <a 
+                        <h3 className="font-semibold text-white mb-2">{t.email}</h3>
+                        <a
                           href="mailto:autoescolafransalou@gmail.com"
-                          className="text-red-600 hover:text-red-700 transition-colors"
+                          className="text-yellow-400 hover:text-yellow-500 transition-colors"
                         >
                           autoescolafransalou@gmail.com
                         </a>
@@ -156,27 +156,27 @@ export default function ContactPage() {
                   </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="bg-gray-800 border-gray-700">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <Phone className="w-6 h-6 text-red-600 mt-1" />
+                      <Phone className="w-6 h-6 text-yellow-400 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-800 mb-2">{t.landline}</h3>
-                        <p className="text-gray-600">{t.landlineText}</p>
+                        <h3 className="font-semibold text-white mb-2">{t.landline}</h3>
+                        <p className="text-gray-300">{t.landlineText}</p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="bg-gray-800 border-gray-700">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <MessageCircle className="w-6 h-6 text-red-600 mt-1" />
+                      <MessageCircle className="w-6 h-6 text-yellow-400 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-800 mb-2">{t.whatsapp}</h3>
-                        <a 
+                        <h3 className="font-semibold text-white mb-2">{t.whatsapp}</h3>
+                        <a
                           href="https://wa.me/34610777027"
-                          className="text-red-600 hover:text-red-700 transition-colors"
+                          className="text-yellow-400 hover:text-yellow-500 transition-colors"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -187,13 +187,13 @@ export default function ContactPage() {
                   </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="bg-gray-800 border-gray-700">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <Clock className="w-6 h-6 text-red-600 mt-1" />
+                      <Clock className="w-6 h-6 text-yellow-400 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-800 mb-2">{t.schedule}</h3>
-                        <p className="text-gray-600 whitespace-pre-line">{t.scheduleText}</p>
+                        <h3 className="font-semibold text-white mb-2">{t.schedule}</h3>
+                        <p className="text-gray-300 whitespace-pre-line">{t.scheduleText}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -203,13 +203,13 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-8">{t.contactForm}</h2>
-              
-              <Card>
+              <h2 className="text-3xl font-bold text-white mb-8">{t.contactForm}</h2>
+
+              <Card className="bg-gray-800 border-gray-700">
                 <CardContent className="p-6">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                         {t.name}
                       </label>
                       <Input
@@ -224,7 +224,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                         {t.email}
                       </label>
                       <Input
@@ -239,7 +239,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
                         {t.phone}
                       </label>
                       <Input
@@ -268,7 +268,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                         {t.message}
                       </label>
                       <Textarea
@@ -284,7 +284,7 @@ export default function ContactPage() {
 
                     <Button 
                       type="submit"
-                      className="bg-red-600 hover:bg-red-700 text-white w-full py-3"
+                      className="bg-yellow-400 hover:bg-yellow-500 text-black w-full py-3 font-bold shadow-lg hover:shadow-yellow-400/50 transition-all duration-200"
                     >
                       {t.send}
                     </Button>
@@ -297,11 +297,11 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">{t.location}</h2>
+          <h2 className="text-3xl font-bold text-center text-white mb-8">{t.location}</h2>
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-gray-900 rounded-lg shadow-2xl overflow-hidden border-2 border-gray-800">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.8!2d1.1310763!3d41.0784008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a15baea7a6e4c5%3A0xee1cd0fb3d0d334f!2sAUTOESCOLA%20FRAN.%20En%20Salou.!5e0!3m2!1ses!2ses!4v1640995200000"
                 width="100%"

@@ -133,39 +133,39 @@ export default function AboutPage() {
   const t = translations[language];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-yellow-400 to-yellow-500">
+      <section className="py-16 bg-black border-b border-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-4">
             {t.title}
           </h1>
-          <p className="text-xl text-black/80 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             {t.subtitle}
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
                 {t.description}
               </p>
 
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl font-bold text-white mb-6">
                 {t.whyUs}
               </h2>
 
               <div className="space-y-4">
                 {t.advantages.map((advantage, index) => (
                   <div key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-red-600 mt-0.5 flex-shrink-0" />
-                    <p className="text-gray-700">{advantage}</p>
+                    <CheckCircle className="w-6 h-6 text-yellow-400 mt-0.5 flex-shrink-0" />
+                    <p className="text-gray-300">{advantage}</p>
                   </div>
                 ))}
               </div>
@@ -177,7 +177,7 @@ export default function AboutPage() {
                 alt="Autoescola Fran"
                 width={600}
                 height={400}
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-2xl border-2 border-gray-800"
               />
             </div>
           </div>
@@ -185,17 +185,17 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-3xl font-bold text-center mb-12 text-white">
             {t.ourTeam}
           </h2>
           <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {/* Fran Profile */}
-            <Card className="shadow-xl hover:shadow-2xl transition-shadow">
+            <Card className="shadow-2xl hover:shadow-yellow-400/20 transition-all duration-300 bg-gray-900 border-2 border-gray-800 hover:border-yellow-400">
               <CardContent className="p-8">
                 <div className="flex flex-col items-center mb-6">
-                  <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-yellow-400 mb-4">
+                  <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-yellow-400 mb-4 shadow-lg shadow-yellow-400/30">
                     <Image
                       src="/images/fran.png"
                       alt="Fran - Director Autoescola"
@@ -204,10 +204,10 @@ export default function AboutPage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-1">
+                  <h3 className="text-2xl font-bold text-white mb-1">
                     {t.franProfile.name}
                   </h3>
-                  <p className="text-lg text-red-600 font-semibold">
+                  <p className="text-lg text-yellow-400 font-semibold">
                     {t.franProfile.title}
                   </p>
                 </div>
@@ -215,14 +215,14 @@ export default function AboutPage() {
                 <div className="space-y-2 mb-4">
                   {t.franProfile.certifications.map((cert, index) => (
                     <div key={index} className="flex items-start space-x-2">
-                      <Award className="w-4 h-4 text-red-600 mt-1 flex-shrink-0" />
-                      <p className="text-sm text-gray-700">{cert}</p>
+                      <Award className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
+                      <p className="text-sm text-gray-300">{cert}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="bg-yellow-50 p-3 rounded-lg mt-4">
-                  <p className="text-xs font-semibold text-gray-800">
+                <div className="bg-gray-800 p-3 rounded-lg mt-4 border border-yellow-400/30">
+                  <p className="text-xs font-semibold text-yellow-400">
                     {t.franProfile.licenses}
                   </p>
                 </div>
@@ -230,10 +230,10 @@ export default function AboutPage() {
             </Card>
 
             {/* Ana Profile */}
-            <Card className="shadow-xl hover:shadow-2xl transition-shadow">
+            <Card className="shadow-2xl hover:shadow-yellow-400/20 transition-all duration-300 bg-gray-900 border-2 border-gray-800 hover:border-yellow-400">
               <CardContent className="p-8">
                 <div className="flex flex-col items-center mb-6">
-                  <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-yellow-400 mb-4">
+                  <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-yellow-400 mb-4 shadow-lg shadow-yellow-400/30">
                     <Image
                       src="/images/ana.png"
                       alt="Ana - Directora Autoescola"
@@ -242,10 +242,10 @@ export default function AboutPage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-1">
+                  <h3 className="text-2xl font-bold text-white mb-1">
                     {t.anaProfile.name}
                   </h3>
-                  <p className="text-lg text-red-600 font-semibold">
+                  <p className="text-lg text-yellow-400 font-semibold">
                     {t.anaProfile.title}
                   </p>
                 </div>
@@ -253,14 +253,14 @@ export default function AboutPage() {
                 <div className="space-y-2 mb-4">
                   {t.anaProfile.certifications.map((cert, index) => (
                     <div key={index} className="flex items-start space-x-2">
-                      <Award className="w-4 h-4 text-red-600 mt-1 flex-shrink-0" />
-                      <p className="text-sm text-gray-700">{cert}</p>
+                      <Award className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
+                      <p className="text-sm text-gray-300">{cert}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="bg-yellow-50 p-3 rounded-lg mt-4">
-                  <p className="text-xs font-semibold text-gray-800">
+                <div className="bg-gray-800 p-3 rounded-lg mt-4 border border-yellow-400/30">
+                  <p className="text-xs font-semibold text-yellow-400">
                     {t.anaProfile.licenses}
                   </p>
                 </div>

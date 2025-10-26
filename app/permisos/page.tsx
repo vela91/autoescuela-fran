@@ -93,26 +93,26 @@ export default function LicensesPage() {
   const license = licenseInfo[language]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-yellow-400 to-yellow-500">
+      <section className="py-16 bg-black border-b border-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-4">
             {t.title}
           </h1>
-          <p className="text-xl text-black/80 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             {t.subtitle}
           </p>
         </div>
       </section>
 
       {/* License Details */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Card className="shadow-xl border-2 border-yellow-400">
+            <Card className="shadow-2xl shadow-yellow-400/10 border-2 border-yellow-400 bg-gray-800 hover:shadow-yellow-400/20 transition-all duration-300">
               <CardContent className="p-8">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
@@ -121,33 +121,33 @@ export default function LicensesPage() {
                       alt={license.name}
                       width={500}
                       height={400}
-                      className="w-full h-auto object-cover rounded-lg"
+                      className="w-full h-auto object-cover rounded-lg border-2 border-gray-700"
                     />
                   </div>
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <h2 className="text-3xl font-bold text-gray-800">{license.name}</h2>
-                      <Badge variant="outline" className="border-red-600 text-red-600 text-lg px-4 py-1">
+                      <h2 className="text-3xl font-bold text-white">{license.name}</h2>
+                      <Badge variant="outline" className="border-yellow-400 text-yellow-400 text-lg px-4 py-1 bg-yellow-400/10">
                         Popular
                       </Badge>
                     </div>
-                    <p className="text-lg text-gray-600 mb-6">{license.description}</p>
-                    <p className="text-gray-700 mb-6">{license.details}</p>
+                    <p className="text-lg text-gray-300 mb-6">{license.description}</p>
+                    <p className="text-gray-300 mb-6">{license.details}</p>
 
                     <div className="space-y-4 mb-6">
-                      <div className="flex justify-between text-lg border-b pb-2">
-                        <span className="text-gray-600 font-medium">{t.age}</span>
-                        <span className="font-bold text-gray-800">{license.age}</span>
+                      <div className="flex justify-between text-lg border-b border-gray-700 pb-2">
+                        <span className="text-gray-400 font-medium">{t.age}</span>
+                        <span className="font-bold text-yellow-400">{license.age}</span>
                       </div>
-                      <div className="flex justify-between text-lg border-b pb-2">
-                        <span className="text-gray-600 font-medium">{t.duration}</span>
-                        <span className="font-bold text-gray-800">{license.duration}</span>
+                      <div className="flex justify-between text-lg border-b border-gray-700 pb-2">
+                        <span className="text-gray-400 font-medium">{t.duration}</span>
+                        <span className="font-bold text-yellow-400">{license.duration}</span>
                       </div>
                     </div>
 
                     <div className="flex space-x-2 mb-6">
-                      <Badge variant="secondary" className="text-base px-4 py-1">{t.theory}</Badge>
-                      <Badge variant="secondary" className="text-base px-4 py-1">{t.practical}</Badge>
+                      <Badge variant="secondary" className="text-base px-4 py-1 bg-gray-700 text-yellow-400 border-gray-600">{t.theory}</Badge>
+                      <Badge variant="secondary" className="text-base px-4 py-1 bg-gray-700 text-yellow-400 border-gray-600">{t.practical}</Badge>
                     </div>
                   </div>
                 </div>
@@ -158,51 +158,51 @@ export default function LicensesPage() {
       </section>
 
       {/* What's Included Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">{t.whatIncludes}</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-white">{t.whatIncludes}</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <Card>
+              <Card className="bg-gray-900 border border-gray-800 hover:border-yellow-400 transition-all duration-300">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-gray-800">{t.theoreticalClasses}</h3>
-                  <p className="text-gray-600">Classes diàries adaptades al teu horari</p>
+                  <h3 className="text-xl font-semibold mb-2 text-yellow-400">{t.theoreticalClasses}</h3>
+                  <p className="text-gray-300">Classes diàries adaptades al teu horari</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="bg-gray-900 border border-gray-800 hover:border-yellow-400 transition-all duration-300">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-gray-800">{t.practicalClasses}</h3>
-                  <p className="text-gray-600">Pràctiques amb vehicles moderns</p>
+                  <h3 className="text-xl font-semibold mb-2 text-yellow-400">{t.practicalClasses}</h3>
+                  <p className="text-gray-300">Pràctiques amb vehicles moderns</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="bg-gray-900 border border-gray-800 hover:border-yellow-400 transition-all duration-300">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-gray-800">{t.examPreparation}</h3>
-                  <p className="text-gray-600">Simulacres d'examen i seguiment personalitzat</p>
+                  <h3 className="text-xl font-semibold mb-2 text-yellow-400">{t.examPreparation}</h3>
+                  <p className="text-gray-300">Simulacres d'examen i seguiment personalitzat</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="bg-gray-900 border border-gray-800 hover:border-yellow-400 transition-all duration-300">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-gray-800">{t.modernVehicles}</h3>
-                  <p className="text-gray-600">Flota renovada amb última tecnologia</p>
+                  <h3 className="text-xl font-semibold mb-2 text-yellow-400">{t.modernVehicles}</h3>
+                  <p className="text-gray-300">Flota renovada amb última tecnologia</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="bg-gray-900 border border-gray-800 hover:border-yellow-400 transition-all duration-300">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-gray-800">{t.flexibleSchedules}</h3>
-                  <p className="text-gray-600">Adaptem les classes a la teva disponibilitat</p>
+                  <h3 className="text-xl font-semibold mb-2 text-yellow-400">{t.flexibleSchedules}</h3>
+                  <p className="text-gray-300">Adaptem les classes a la teva disponibilitat</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="bg-gray-900 border border-gray-800 hover:border-yellow-400 transition-all duration-300">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-gray-800">{t.experiencedInstructors}</h3>
-                  <p className="text-gray-600">Professionals certificats i amb anys d'experiència</p>
+                  <h3 className="text-xl font-semibold mb-2 text-yellow-400">{t.experiencedInstructors}</h3>
+                  <p className="text-gray-300">Professionals certificats i amb anys d'experiència</p>
                 </CardContent>
               </Card>
             </div>
             <div className="text-center mt-12">
               <a href="/contacte">
-                <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg">
+                <Button className="bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-4 text-lg font-bold rounded-lg shadow-lg hover:shadow-yellow-400/50 transition-all duration-200">
                   {t.moreInfo}
                 </Button>
               </a>

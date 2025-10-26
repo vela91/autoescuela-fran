@@ -20,7 +20,7 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#FFD700", // Yellow from logo
+          DEFAULT: "#FCD34D", // Bright yellow accent
           foreground: "#000000",
         },
         secondary: {
@@ -48,9 +48,27 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
         yellow: {
+          300: "#FCD34D",
           400: "#FBBF24",
-          500: "#F59E0B", 
+          500: "#F59E0B",
           600: "#D97706",
+        },
+        black: {
+          DEFAULT: "#000000",
+          900: "#0A0A0A",
+          800: "#1A1A1A",
+        },
+        gray: {
+          50: "#FAFAFA",
+          100: "#F5F5F5",
+          200: "#E5E5E5",
+          300: "#D4D4D4",
+          400: "#A3A3A3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+          800: "#262626",
+          900: "#171717",
         },
         red: {
           600: "#DC2626",

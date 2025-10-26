@@ -48,9 +48,9 @@ export default function Footer() {
             <Image
               src="/logo.png"
               alt="Autoescola Fran en Salou"
-              width={120}
-              height={60}
-              className="h-12 w-auto mb-4"
+              width={180}
+              height={90}
+              className="h-16 w-auto mb-4 brightness-110"
             />
             <p className="text-gray-300 text-sm">
               La teva autoescola de confiança a Salou
@@ -104,11 +104,11 @@ export default function Footer() {
                 <Instagram className="w-6 h-6" />
               </a>
             </div>
-            <a 
+            <a
               href="https://share.google/FiSu0qypsKD8coE2w"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded font-semibold transition-colors"
+              className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded font-bold transition-all duration-300 shadow-[0_0_15px_rgba(250,204,21,0.5)] hover:shadow-[0_0_25px_rgba(250,204,21,0.8)] hover:scale-105"
             >
               {t.examNotes}
             </a>

@@ -204,53 +204,53 @@ export default function CursoIntensivoPage() {
   const t = translations[language]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-yellow-400 to-yellow-500">
+      <section className="py-16 bg-black border-b border-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-4">
             {t.title}
           </h1>
-          <p className="text-xl text-black/80 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             {t.subtitle}
           </p>
         </div>
       </section>
 
       {/* Description Section */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg text-gray-300 leading-relaxed">
               {t.description}
             </p>
           </div>
 
           {/* Course Info Cards */}
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="text-center shadow-lg border-2 border-yellow-400">
+            <Card className="text-center shadow-2xl border-2 border-yellow-400 bg-gray-800 hover:shadow-yellow-400/20 transition-all duration-300">
               <CardContent className="p-6">
-                <Clock className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{t.duration}</h3>
-                <p className="text-gray-600">{t.durationValue}</p>
+                <Clock className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">{t.duration}</h3>
+                <p className="text-gray-300">{t.durationValue}</p>
               </CardContent>
             </Card>
 
-            <Card className="text-center shadow-lg border-2 border-yellow-400">
+            <Card className="text-center shadow-2xl border-2 border-yellow-400 bg-gray-800 hover:shadow-yellow-400/20 transition-all duration-300">
               <CardContent className="p-6">
-                <Calendar className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{t.schedule}</h3>
-                <p className="text-gray-600">{t.scheduleValue}</p>
+                <Calendar className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">{t.schedule}</h3>
+                <p className="text-gray-300">{t.scheduleValue}</p>
               </CardContent>
             </Card>
 
-            <Card className="text-center shadow-lg border-2 border-yellow-400">
+            <Card className="text-center shadow-2xl border-2 border-yellow-400 bg-gray-800 hover:shadow-yellow-400/20 transition-all duration-300">
               <CardContent className="p-6">
-                <Award className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{t.frequency}</h3>
-                <p className="text-gray-600">{t.frequencyValue}</p>
+                <Award className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">{t.frequency}</h3>
+                <p className="text-gray-300">{t.frequencyValue}</p>
               </CardContent>
             </Card>
           </div>
@@ -258,15 +258,15 @@ export default function CursoIntensivoPage() {
       </section>
 
       {/* What's Included */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">{t.whatIncludes}</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-white">{t.whatIncludes}</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {t.includes.map((item, index) => (
                 <div key={index} className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-red-600 mt-1 flex-shrink-0" />
-                  <p className="text-lg text-gray-700">{item}</p>
+                  <CheckCircle className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
+                  <p className="text-lg text-gray-300">{item}</p>
                 </div>
               ))}
             </div>
@@ -275,18 +275,18 @@ export default function CursoIntensivoPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">{t.benefits}</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-white">{t.benefits}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {t.benefitsList.map((benefit, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+              <Card key={index} className="text-center hover:shadow-2xl hover:shadow-yellow-400/10 transition-all duration-300 bg-gray-800 border border-gray-700 hover:border-yellow-400">
                 <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-yellow-400/30">
+                    <Users className="w-8 h-8 text-black" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-800 mb-2">{benefit.title}</h3>
-                  <p className="text-gray-600">{benefit.description}</p>
+                  <h3 className="text-lg font-bold text-white mb-2">{benefit.title}</h3>
+                  <p className="text-gray-300">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -295,17 +295,17 @@ export default function CursoIntensivoPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">{t.howWorks}</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-white">{t.howWorks}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {t.steps.map((step, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-black">
+                <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-black shadow-lg shadow-yellow-400/30">
                   {index + 1}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <h3 className="text-xl font-bold text-yellow-400 mb-2">{step.title}</h3>
+                <p className="text-gray-300">{step.description}</p>
               </div>
             ))}
           </div>
@@ -313,11 +313,11 @@ export default function CursoIntensivoPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-black text-white">
+      <section className="py-16 bg-gray-900 border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-8">{t.cta}</h2>
+          <h2 className="text-4xl font-bold mb-8 text-white">{t.cta}</h2>
           <Link href="/contacte">
-            <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg">
+            <Button className="bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-4 text-lg font-bold rounded-lg shadow-lg hover:shadow-yellow-400/50 transition-all duration-200">
               {t.ctaButton}
             </Button>
           </Link>

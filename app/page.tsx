@@ -28,10 +28,17 @@ const translations = {
       schedule: "De 16:00h. a 20:00h.",
       cta: "Reserva la teva plaça.",
     },
+    whyChooseUs: {
+      title: "Per què escollir Autoescola Fran?",
+      subtitle: "Instructors amb experiència immensa, els millors preus del mercat i ofertes exclusives per als nostres alumnes"
+    },
     valueProps: {
       modern: "Vehicles Moderns",
+      modernDesc: "Flota renovada amb els últims models i tecnologia de seguretat.",
       flexible: "Horaris Flexibles",
+      flexibleDesc: "Adaptem els horaris a les teves necessitats i disponibilitat.",
       expert: "Instructors Experts",
+      expertDesc: "Professionals amb anys d'experiència i mètodes d'ensenyament eficaços."
     },
     featuredLicenses: "Permisos Destacats",
     testimonials: "Testimonis",
@@ -51,10 +58,17 @@ const translations = {
       schedule: "De 16:00h. a 20:00h.",
       cta: "Reserva tu plaza.",
     },
+    whyChooseUs: {
+      title: "¿Por qué elegir Autoescola Fran?",
+      subtitle: "Instructores con experiencia inmensa, los mejores precios del mercado y ofertas exclusivas para nuestros alumnos"
+    },
     valueProps: {
       modern: "Vehículos Modernos",
+      modernDesc: "Flota renovada con los últimos modelos y tecnología de seguridad.",
       flexible: "Horarios Flexibles",
+      flexibleDesc: "Adaptamos los horarios a tus necesidades y disponibilidad.",
       expert: "Instructores Expertos",
+      expertDesc: "Profesionales con años de experiencia y métodos de enseñanza eficaces."
     },
     featuredLicenses: "Permisos Destacados",
     testimonials: "Testimonios",
@@ -74,10 +88,17 @@ const translations = {
       schedule: "From 4:00 PM to 8:00 PM.",
       cta: "Reserve your spot.",
     },
+    whyChooseUs: {
+      title: "Why choose Autoescola Fran?",
+      subtitle: "Instructors with immense experience, the best market prices and exclusive offers for our students"
+    },
     valueProps: {
       modern: "Modern Vehicles",
+      modernDesc: "Renewed fleet with the latest models and safety technology.",
       flexible: "Flexible Schedules",
+      flexibleDesc: "We adapt schedules to your needs and availability.",
       expert: "Expert Instructors",
+      expertDesc: "Professionals with years of experience and effective teaching methods."
     },
     featuredLicenses: "Featured Licenses",
     testimonials: "Testimonials",
@@ -162,32 +183,11 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       <Header />
 
-      {/* Hero Banner */}
-      {/* <section className="relative h-[600px] bg-gradient-to-r from-yellow-400 to-yellow-500 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <Image
-          src="/placeholder-9kcry.png"
-          alt="Hero image"
-          fill
-          className="object-cover mix-blend-overlay"
-        />
-        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black drop-shadow-lg">
-            {t.heroTitle}
-          </h1>
-          <Link href="/permisos">
-            <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg">
-              {t.heroButton}
-            </Button>
-          </Link>
-        </div>
-      </section> */}
-
       {/* Intensive Course Banner */}
-      <section className="py-0 bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-400 relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-400 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -204,7 +204,7 @@ export default function HomePage() {
               {t.intensiveBanner.cta}
             </p>
             <Link href="/contacte">
-              <Button className="bg-gray-900 hover:bg-black text-white px-10 py-6 text-xl font-bold rounded-full shadow-2xl transform transition hover:scale-105 animate-pulse">
+              <Button className="bg-gray-900 hover:bg-black text-white px-10 py-6 text-xl font-bold rounded-full shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:shadow-[0_0_50px_rgba(0,0,0,0.9)] transform transition-all duration-300 hover:scale-110">
                 {t.intensiveBanner.cta}
               </Button>
             </Link>
@@ -213,15 +213,15 @@ export default function HomePage() {
       </section>
 
       {/* Quick Access Section */}
-      <section className="py-8 bg-gray-100">
+      <section className="py-12 bg-gradient-to-b from-black via-gray-900 to-black">
         <div className="container mx-auto px-4 text-center">
           <a
             href="https://share.google/FiSu0qypsKD8coE2w"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block"
+            className="inline-block group"
           >
-            <Button className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 text-lg font-semibold rounded-lg shadow-lg">
+            <Button className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black px-10 py-5 text-xl font-black rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-yellow-300">
               {t.quickAccessButton}
             </Button>
           </a>
@@ -229,41 +229,51 @@ export default function HomePage() {
       </section>
 
       {/* Value Props Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Car className="w-8 h-8 text-white" />
+          {/* Header and Subheader */}
+          <div className="text-center mb-16 max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 md:whitespace-nowrap">
+              {t.whyChooseUs.title}
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+              {t.whyChooseUs.subtitle}
+            </p>
+          </div>
+
+          {/* Value Props Cards */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="group text-center p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl transition-all duration-300 border border-gray-700 hover:border-yellow-400 hover:-translate-y-2">
+              <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <Car className="w-10 h-10 text-black" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-yellow-400 transition-colors duration-300">
                 {t.valueProps.modern}
               </h3>
-              <p className="text-gray-600">
-                Flota renovada amb els últims models i tecnologia de seguretat.
+              <p className="text-gray-300 leading-relaxed">
+                {t.valueProps.modernDesc}
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-white" />
+            <div className="group text-center p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl transition-all duration-300 border border-gray-700 hover:border-yellow-400 hover:-translate-y-2">
+              <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <Clock className="w-10 h-10 text-black" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-yellow-400 transition-colors duration-300">
                 {t.valueProps.flexible}
               </h3>
-              <p className="text-gray-600">
-                Adaptem els horaris a les teves necessitats i disponibilitat.
+              <p className="text-gray-300 leading-relaxed">
+                {t.valueProps.flexibleDesc}
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
+            <div className="group text-center p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl transition-all duration-300 border border-gray-700 hover:border-yellow-400 hover:-translate-y-2">
+              <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <Users className="w-10 h-10 text-black" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-yellow-400 transition-colors duration-300">
                 {t.valueProps.expert}
               </h3>
-              <p className="text-gray-600">
-                Professionals amb anys d'experiència i mètodes d'ensenyament
-                eficaços.
+              <p className="text-gray-300 leading-relaxed">
+                {t.valueProps.expertDesc}
               </p>
             </div>
           </div>
@@ -271,28 +281,32 @@ export default function HomePage() {
       </section>
 
       {/* Featured Licenses */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-3xl font-bold text-center mb-12 text-white">
             {t.featuredLicenses}
           </h2>
           <div className="flex justify-center">
-            <Card className="hover:shadow-lg transition-shadow max-w-md w-full">
+            <Card className="group transition-all duration-300 max-w-md w-full bg-gray-800 border border-gray-700 hover:border-yellow-400 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
               <CardContent className="p-6">
-                <Image
-                  src="/car-license-b-permit.png"
-                  alt="Permís B"
-                  width={400}
-                  height={300}
-                  className="w-full h-64 object-cover rounded-lg mb-4"
-                />
-                <h3 className="text-2xl font-semibold mb-2">Permís B</h3>
-                <p className="text-gray-600 mb-4">
+                <div className="overflow-hidden rounded-lg mb-4">
+                  <Image
+                    src="/car-license-b-permit.png"
+                    alt="Permís B"
+                    width={400}
+                    height={300}
+                    className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <h3 className="text-2xl font-semibold mb-2 text-white group-hover:text-yellow-400 transition-colors">
+                  Permís B
+                </h3>
+                <p className="text-gray-300 mb-4">
                   Carnet de cotxe. El més sol·licitat per a vehicles fins a
                   3.500kg.
                 </p>
                 <Link href="/permisos">
-                  <Button className="bg-red-600 hover:bg-red-700 text-white w-full">
+                  <Button className="bg-yellow-400 hover:bg-yellow-500 text-black w-full font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105">
                     Més Informació
                   </Button>
                 </Link>
@@ -303,29 +317,29 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-3xl font-bold text-center mb-12 text-white">
             {t.testimonials}
           </h2>
           <div className="max-w-4xl mx-auto">
             <div className="relative">
-              <Card className="p-8">
+              <Card className="p-8 bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 shadow-xl">
                 <CardContent className="text-center">
-                  <div className="flex justify-center mb-4">
+                  <div className="flex justify-center mb-4 gap-1">
                     {[
                       ...Array(currentTestimonials[currentTestimonial].rating),
                     ].map((_, i) => (
                       <Star
                         key={i}
-                        className="w-5 h-5 text-yellow-500 fill-current"
+                        className="w-6 h-6 text-yellow-400 fill-current"
                       />
                     ))}
                   </div>
-                  <p className="text-lg text-gray-600 mb-6 italic">
+                  <p className="text-lg text-gray-200 mb-6 italic leading-relaxed">
                     "{currentTestimonials[currentTestimonial].text}"
                   </p>
-                  <p className="font-semibold text-gray-800">
+                  <p className="font-semibold text-yellow-400">
                     - {currentTestimonials[currentTestimonial].name}
                   </p>
                 </CardContent>
@@ -333,18 +347,18 @@ export default function HomePage() {
               <Button
                 variant="outline"
                 size="icon"
-                className="absolute left-4 top-1/2 transform -translate-y-1/2"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 border-gray-700 text-yellow-400 hover:bg-gray-700 hover:border-yellow-400 transition-all duration-300"
                 onClick={prevTestimonial}
               >
-                <ChevronLeft className="w-4 h-4" />
+                <ChevronLeft className="w-5 h-5" />
               </Button>
               <Button
                 variant="outline"
                 size="icon"
-                className="absolute right-4 top-1/2 transform -translate-y-1/2"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 border-gray-700 text-yellow-400 hover:bg-gray-700 hover:border-yellow-400 transition-all duration-300"
                 onClick={nextTestimonial}
               >
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-5 h-5" />
               </Button>
             </div>
           </div>
@@ -352,18 +366,18 @@ export default function HomePage() {
       </section>
 
       {/* Location Map */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-gray-800">
+            <h2 className="text-3xl font-bold mb-4 text-white">
               {t.locationTitle}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               {t.locationDescription}
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-gray-800 rounded-lg shadow-xl overflow-hidden border border-gray-700">
               <div className="aspect-video">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.8!2d1.1310763!3d41.0784008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a15baea7a6e4c5%3A0xee1cd0fb3d0d334f!2sAUTOESCOLA%20FRAN.%20En%20Salou.!5e0!3m2!1ses!2ses!4v1640995200000"
@@ -376,9 +390,9 @@ export default function HomePage() {
                   title="Autoescola Fran - Salou - Calle Barcelona 35, local 3"
                 ></iframe>
               </div>
-              <div className="p-6 text-center">
+              <div className="p-6 text-center bg-gray-800">
                 <Button
-                  className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg font-semibold rounded-lg shadow-lg"
+                  className="bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-3 text-lg font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
                   onClick={() =>
                     window.open(
                       "https://www.google.com/maps/place/AUTOESCOLA+FRAN.+En+Salou./@41.0784008,1.1285014,17z/data=!3m1!4b1!4m6!3m5!1s0x12a15baea7a6e4c5:0xee1cd0fb3d0d334f!8m2!3d41.0784008!4d1.1310763!16s%2Fg%2F11xtmpmbx8",
@@ -395,11 +409,11 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-black text-white">
+      <section className="py-16 bg-black text-white border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-8">{t.finalCta}</h2>
+          <h2 className="text-4xl font-bold mb-8 text-white">{t.finalCta}</h2>
           <Link href="/contacte">
-            <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg">
+            <Button className="bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-4 text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               {t.finalCtaButton}
             </Button>
           </Link>
