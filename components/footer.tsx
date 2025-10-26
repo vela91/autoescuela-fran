@@ -9,23 +9,29 @@ const footerTranslations = {
   ca: {
     quickLinks: 'Enllaços Ràpids',
     contact: 'Contacte',
-    address: 'Adreça a Salou (per definir)',
+    address: 'Calle Barcelona 35, local 3, 43840 Salou, Tarragona',
+    schedule: 'Horari: 10:00-14:00 i 16:00-20:00',
     examNotes: 'Consulta Notes D\'Examen',
-    followUs: 'Segueix-nos'
+    followUs: 'Segueix-nos',
+    intensiveCourse: 'Curs Intensiu'
   },
   es: {
-    quickLinks: 'Enlaces Rápidos', 
+    quickLinks: 'Enlaces Rápidos',
     contact: 'Contacto',
-    address: 'Dirección en Salou (por definir)',
+    address: 'Calle Barcelona 35, local 3, 43840 Salou, Tarragona',
+    schedule: 'Horario: 10:00-14:00 y 16:00-20:00',
     examNotes: 'Consulta Notas de Examen',
-    followUs: 'Síguenos'
+    followUs: 'Síguenos',
+    intensiveCourse: 'Curso Intensivo'
   },
   en: {
     quickLinks: 'Quick Links',
     contact: 'Contact',
-    address: 'Address in Salou (to be defined)',
+    address: 'Calle Barcelona 35, local 3, 43840 Salou, Tarragona',
+    schedule: 'Schedule: 10:00-14:00 and 16:00-20:00',
     examNotes: 'Check Exam Results',
-    followUs: 'Follow Us'
+    followUs: 'Follow Us',
+    intensiveCourse: 'Intensive Course'
   }
 }
 
@@ -58,6 +64,7 @@ export default function Footer() {
               <li><Link href="/" className="text-gray-300 hover:text-yellow-400 transition-colors">Inici</Link></li>
               <li><Link href="/sobre-nosaltres" className="text-gray-300 hover:text-yellow-400 transition-colors">Sobre Nosaltres</Link></li>
               <li><Link href="/permisos" className="text-gray-300 hover:text-yellow-400 transition-colors">Permisos</Link></li>
+              <li><Link href="/curso-intensivo" className="text-gray-300 hover:text-yellow-400 transition-colors">{t.intensiveCourse}</Link></li>
               <li><Link href="/contacte" className="text-gray-300 hover:text-yellow-400 transition-colors">Contacte</Link></li>
               <li><Link href="/blog" className="text-gray-300 hover:text-yellow-400 transition-colors">Blog</Link></li>
             </ul>
@@ -66,15 +73,16 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold mb-4">{t.contact}</h3>
-            <div className="space-y-2 text-gray-300">
+            <div className="space-y-2 text-gray-300 text-sm">
               <p>{t.address}</p>
+              <p>{t.schedule}</p>
               <p>
                 <a href="mailto:autoescolafransalou@gmail.com" className="hover:text-yellow-400 transition-colors">
                   autoescolafransalou@gmail.com
                 </a>
               </p>
               <div className="space-y-2">
-                <p>Teléfono fijo: 977 017 165</p>
+                <p>Teléfono: 977 017 165</p>
                 <div className="flex items-center space-x-2">
                   <MessageCircle className="w-4 h-4" />
                   <a href="https://wa.me/34610777027" className="hover:text-yellow-400 transition-colors">

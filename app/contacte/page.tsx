@@ -16,14 +16,14 @@ const translations = {
     subtitle: "Estem aquí per ajudar-te amb qualsevol dubte",
     contactInfo: "Informació de Contacte",
     address: "Adreça",
-    addressText: "Carrer Principal, 123\n43840 Salou, Tarragona",
+    addressText: "Calle Barcelona 35, local 3\n43840 Salou, Tarragona",
     email: "Correu Electrònic",
     landline: "Telèfon Fix",
     landlineText: "977 017 165",
     whatsapp: "WhatsApp",
     whatsappText: "610 777 027",
     schedule: "Horari d'Oficina",
-    scheduleText: "Dilluns a Divendres: 9:00 - 19:00\nDissabtes: 9:00 - 14:00",
+    scheduleText: "Horari d'oficina: 10:00 - 14:00 i 16:00 - 20:00\nClasses teòriques: 10:00 i 18:00 de dilluns a divendres\nCursos intensius de teòrica cada mes",
     contactForm: "Formulari de Contacte",
     name: "Nom complet",
     phone: "Telèfon",
@@ -37,14 +37,14 @@ const translations = {
     subtitle: "Estamos aquí para ayudarte con cualquier duda",
     contactInfo: "Información de Contacto",
     address: "Dirección",
-    addressText: "Calle Principal, 123\n43840 Salou, Tarragona",
+    addressText: "Calle Barcelona 35, local 3\n43840 Salou, Tarragona",
     email: "Correo Electrónico",
     landline: "Teléfono Fijo",
     landlineText: "977 017 165",
     whatsapp: "WhatsApp", 
     whatsappText: "610 777 027",
     schedule: "Horario de Oficina",
-    scheduleText: "Lunes a Viernes: 9:00 - 19:00\nSábados: 9:00 - 14:00",
+    scheduleText: "Horario de oficina: 10:00 - 14:00 y 16:00 - 20:00\nClases teóricas: 10:00 y 18:00 de lunes a viernes\nCursos intensivos de teórica cada mes",
     contactForm: "Formulario de Contacto",
     name: "Nombre completo",
     phone: "Teléfono",
@@ -58,14 +58,14 @@ const translations = {
     subtitle: "We're here to help you with any questions",
     contactInfo: "Contact Information",
     address: "Address",
-    addressText: "Main Street, 123\n43840 Salou, Tarragona",
+    addressText: "Calle Barcelona 35, local 3\n43840 Salou, Tarragona",
     email: "Email",
     landline: "Landline",
     landlineText: "977 017 165",
     whatsapp: "WhatsApp",
     whatsappText: "610 777 027",
     schedule: "Office Hours",
-    scheduleText: "Monday to Friday: 9:00 - 19:00\nSaturdays: 9:00 - 14:00",
+    scheduleText: "Office hours: 10:00 - 14:00 and 16:00 - 20:00\nTheory classes: 10:00 and 18:00 Monday to Friday\nIntensive theory courses every month",
     contactForm: "Contact Form",
     name: "Full name",
     phone: "Phone",
@@ -301,11 +301,17 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">{t.location}</h2>
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gray-300 h-96 rounded-lg flex items-center justify-center">
-              <p className="text-gray-600 text-lg">
-                {/* Placeholder for Google Maps integration */}
-                Mapa de Google Maps - Ubicació a Salou
-              </p>
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.8!2d1.1310763!3d41.0784008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a15baea7a6e4c5%3A0xee1cd0fb3d0d334f!2sAUTOESCOLA%20FRAN.%20En%20Salou.!5e0!3m2!1ses!2ses!4v1640995200000"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Autoescola Fran - Calle Barcelona 35, local 3, Salou"
+              ></iframe>
             </div>
           </div>
         </div>

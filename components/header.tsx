@@ -10,8 +10,9 @@ import { useLanguage } from '@/hooks/use-language'
 const navigation = {
   ca: {
     home: 'Inici',
-    about: 'Sobre Nosaltres', 
+    about: 'Sobre Nosaltres',
     licenses: 'Permisos',
+    intensiveCourse: 'Curs Intensiu',
     contact: 'Contacte',
     blog: 'Blog',
     cta: "MATRICULA'T ARA"
@@ -19,7 +20,8 @@ const navigation = {
   es: {
     home: 'Inicio',
     about: 'Sobre Nosotros',
-    licenses: 'Permisos', 
+    licenses: 'Permisos',
+    intensiveCourse: 'Curso Intensivo',
     contact: 'Contacto',
     blog: 'Blog',
     cta: 'MATRICÚLATE AHORA'
@@ -28,7 +30,8 @@ const navigation = {
     home: 'Home',
     about: 'About Us',
     licenses: 'Licenses',
-    contact: 'Contact', 
+    intensiveCourse: 'Intensive Course',
+    contact: 'Contact',
     blog: 'Blog',
     cta: 'ENROLL NOW'
   }
@@ -64,6 +67,9 @@ export default function Header() {
             </Link>
             <Link href="/permisos" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
               {nav.licenses}
+            </Link>
+            <Link href="/curso-intensivo" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+              {nav.intensiveCourse}
             </Link>
             <Link href="/contacte" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
               {nav.contact}
@@ -126,6 +132,9 @@ export default function Header() {
               </Link>
               <Link href="/permisos" className="text-gray-700 hover:text-red-600 font-medium">
                 {nav.licenses}
+              </Link>
+              <Link href="/curso-intensivo" className="text-gray-700 hover:text-red-600 font-medium">
+                {nav.intensiveCourse}
               </Link>
               <Link href="/contacte" className="text-gray-700 hover:text-red-600 font-medium">
                 {nav.contact}
