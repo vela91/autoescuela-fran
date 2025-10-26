@@ -22,7 +22,7 @@ const translations = {
   ca: {
     heroTitle: "El teu futur comença a Autoescola Fran.",
     heroButton: "VEURE PERMISOS",
-    quickAccessButton: "CONSULTA LES TEVES NOTES D'EXAMEN",
+    quickAccessButton: "TEVES NOTES D'EXAMEN",
     intensiveBanner: {
       title: "Curs intensiu del 3 al 7 de novembre.",
       schedule: "De 16:00h. a 20:00h.",
@@ -30,15 +30,19 @@ const translations = {
     },
     whyChooseUs: {
       title: "Per què escollir Autoescola Fran?",
-      subtitle: "Instructors amb experiència immensa, els millors preus del mercat i ofertes exclusives per als nostres alumnes"
+      subtitle:
+        "Instructors amb experiència immensa, els millors preus del mercat i ofertes exclusives per als nostres alumnes",
     },
     valueProps: {
       modern: "Vehicles Moderns",
-      modernDesc: "Flota renovada amb els últims models i tecnologia de seguretat.",
+      modernDesc:
+        "Flota renovada amb els últims models i tecnologia de seguretat.",
       flexible: "Horaris Flexibles",
-      flexibleDesc: "Adaptem els horaris a les teves necessitats i disponibilitat.",
+      flexibleDesc:
+        "Adaptem els horaris a les teves necessitats i disponibilitat.",
       expert: "Instructors Experts",
-      expertDesc: "Professionals amb anys d'experiència i mètodes d'ensenyament eficaços."
+      expertDesc:
+        "Professionals amb anys d'experiència i mètodes d'ensenyament eficaços.",
     },
     featuredLicenses: "Permisos Destacats",
     testimonials: "Testimonis",
@@ -52,7 +56,7 @@ const translations = {
   es: {
     heroTitle: "Tu futuro empieza en Autoescola Fran.",
     heroButton: "VER PERMISOS",
-    quickAccessButton: "CONSULTA TUS NOTAS DE EXAMEN",
+    quickAccessButton: "TUS NOTAS DE EXAMEN",
     intensiveBanner: {
       title: "Curso intensivo del 3 al 7 de noviembre.",
       schedule: "De 16:00h. a 20:00h.",
@@ -60,15 +64,19 @@ const translations = {
     },
     whyChooseUs: {
       title: "¿Por qué elegir Autoescola Fran?",
-      subtitle: "Instructores con experiencia inmensa, los mejores precios del mercado y ofertas exclusivas para nuestros alumnos"
+      subtitle:
+        "Instructores con experiencia inmensa, los mejores precios del mercado y ofertas exclusivas para nuestros alumnos",
     },
     valueProps: {
       modern: "Vehículos Modernos",
-      modernDesc: "Flota renovada con los últimos modelos y tecnología de seguridad.",
+      modernDesc:
+        "Flota renovada con los últimos modelos y tecnología de seguridad.",
       flexible: "Horarios Flexibles",
-      flexibleDesc: "Adaptamos los horarios a tus necesidades y disponibilidad.",
+      flexibleDesc:
+        "Adaptamos los horarios a tus necesidades y disponibilidad.",
       expert: "Instructores Expertos",
-      expertDesc: "Profesionales con años de experiencia y métodos de enseñanza eficaces."
+      expertDesc:
+        "Profesionales con años de experiencia y métodos de enseñanza eficaces.",
     },
     featuredLicenses: "Permisos Destacados",
     testimonials: "Testimonios",
@@ -82,7 +90,7 @@ const translations = {
   en: {
     heroTitle: "Your future starts at Autoescola Fran.",
     heroButton: "VIEW LICENSES",
-    quickAccessButton: "CHECK YOUR EXAM RESULTS",
+    quickAccessButton: "YOUR EXAM RESULTS",
     intensiveBanner: {
       title: "Intensive course from November 3rd to 7th.",
       schedule: "From 4:00 PM to 8:00 PM.",
@@ -90,7 +98,8 @@ const translations = {
     },
     whyChooseUs: {
       title: "Why choose Autoescola Fran?",
-      subtitle: "Instructors with immense experience, the best market prices and exclusive offers for our students"
+      subtitle:
+        "Instructors with immense experience, the best market prices and exclusive offers for our students",
     },
     valueProps: {
       modern: "Modern Vehicles",
@@ -98,7 +107,8 @@ const translations = {
       flexible: "Flexible Schedules",
       flexibleDesc: "We adapt schedules to your needs and availability.",
       expert: "Expert Instructors",
-      expertDesc: "Professionals with years of experience and effective teaching methods."
+      expertDesc:
+        "Professionals with years of experience and effective teaching methods.",
     },
     featuredLicenses: "Featured Licenses",
     testimonials: "Testimonials",
