@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <radialGradient id="light" cx="50%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#facc15" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#facc15" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" rx="48" fill="url(#bg)" />
+  <rect width="1200" height="675" fill="url(#light)" opacity="0.45" />
+  <path d="M0 520C200 500 400 580 600 540C800 500 1000 580 1200 540V675H0V520Z" fill="#0f172a" opacity="0.55" />
+  <g opacity="0.4" stroke="#f8fafc" stroke-width="6">
+    <path d="M160 160L1040 160" stroke-linecap="round" stroke-dasharray="40 24" />
+    <path d="M120 220L1080 220" stroke-linecap="round" stroke-dasharray="20 18" />
+    <path d="M100 280L1100 280" stroke-linecap="round" stroke-dasharray="14 14" />
+  </g>
+  <path d="M480 360C480 324 508 296 544 296H656C692 296 720 324 720 360V420C720 456 692 484 656 484H544C508 484 480 456 480 420V360Z" fill="#1e3a8a" opacity="0.85" />
+  <path d="M520 332H680" stroke="#93c5fd" stroke-width="20" stroke-linecap="round" />
+  <circle cx="564" cy="452" r="42" fill="#f9fafb" />
+  <circle cx="636" cy="452" r="42" fill="#f9fafb" />
+  <text x="180" y="200" fill="#f9fafb" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="700">Conducción en condiciones adversas</text>
+  <text x="180" y="260" fill="#dbeafe" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="32" font-weight="500">Lluvia · Niebla · Noche · Emergencias</text>
+  <text x="180" y="310" fill="#bfdbfe" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="26">Reduce la velocidad, aumenta la distancia y planifica</text>
+</svg>

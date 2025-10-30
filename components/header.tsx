@@ -55,6 +55,8 @@ export default function Header() {
                 alt="Autoescola Fran en Salou"
                 width={320}
                 height={160}
+                priority
+                sizes="(max-width: 768px) 200px, 320px"
                 className="h-32 w-auto brightness-110 relative z-10 drop-shadow-[0_0_20px_rgba(250,204,21,0.4)] group-hover:drop-shadow-[0_0_30px_rgba(250,204,21,0.7)] transition-all duration-300"
               />
             </div>

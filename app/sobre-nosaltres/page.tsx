@@ -26,7 +26,7 @@ const translations = {
     ourTeam: "El nostre equip",
     franProfile: {
       name: "Fran",
-      title: "Director i Instructor Principal",
+      title: "Director i Instructor",
       certifications: [
         "Professor de formació vial",
         "Director d'escola de conductors",
@@ -65,7 +65,7 @@ const translations = {
     ourTeam: "Nuestro equipo",
     franProfile: {
       name: "Fran",
-      title: "Director e Instructor Principal",
+      title: "Director e Instructor",
       certifications: [
         "Profesor de formación vial",
         "Director de escuela de conductores",
@@ -104,7 +104,7 @@ const translations = {
     ourTeam: "Our team",
     franProfile: {
       name: "Fran",
-      title: "Director and Lead Instructor",
+      title: "Director and Instructor",
       certifications: [
         "Road Training Professor",
         "Driving School Director",

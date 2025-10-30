@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#facc15" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#facc15" stop-opacity="0.6" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" rx="48" />
+  <g opacity="0.7">
+    <path d="M220 500L980 140" stroke="#facc15" stroke-width="10" stroke-linecap="round" />
+    <path d="M260 530L1020 170" stroke="#fef08a" stroke-width="6" stroke-linecap="round" />
+    <path d="M300 560L1060 200" stroke="#facc15" stroke-width="4" stroke-linecap="round" />
+  </g>
+  <rect x="150" y="120" width="420" height="210" rx="28" fill="#1e293b" opacity="0.85" />
+  <text x="190" y="190" fill="#fef3c7" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="54" font-weight="700">Código de circulación</text>
+  <text x="190" y="245" fill="#fde68a" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="36" font-weight="500">Novedades 2024</text>
+  <text x="190" y="295" fill="#e5e7eb" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="26">Velocidad · Zonas de bajas emisiones · Seguridad</text>
+  <rect x="700" y="180" width="320" height="320" rx="160" fill="#facc15" opacity="0.12" />
+  <rect x="740" y="220" width="240" height="240" rx="120" fill="#facc15" opacity="0.25" />
+  <text x="780" y="360" fill="#fef9c3" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="120" font-weight="700">2024</text>
+</svg>

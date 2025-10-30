@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" rx="48" />
+  <path d="M0 540C180 520 320 440 520 470C720 500 860 420 1200 460V675H0V540Z" fill="#1e293b" opacity="0.6" />
+  <path d="M140 540C220 440 360 390 520 420C680 450 780 350 960 380C1140 410 1180 500 1200 520" stroke="#fde68a" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <circle cx="320" cy="440" r="32" fill="#ef4444" />
+  <circle cx="650" cy="400" r="28" fill="#22d3ee" />
+  <circle cx="940" cy="410" r="24" fill="#22c55e" />
+  <rect x="150" y="120" width="320" height="160" rx="24" fill="#ffffff" fill-opacity="0.12" />
+  <path d="M780 160H1040" stroke="#38bdf8" stroke-width="16" stroke-linecap="round" />
+  <path d="M780 220H980" stroke="#38bdf8" stroke-width="16" stroke-linecap="round" opacity="0.5" />
+  <path d="M240 150L320 210" stroke="#ffffff" stroke-width="16" stroke-linecap="round" />
+  <path d="M320 150L240 210" stroke="#ffffff" stroke-width="16" stroke-linecap="round" />
+  <text x="180" y="170" fill="#ffffff" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="700">Rutas prácticas</text>
+  <text x="180" y="230" fill="#fef3c7" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="32" font-weight="500">Salou · Cambrils · Costa Daurada</text>
+  <text x="820" y="200" fill="#fef3c7" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600">Conoce cada giro antes del examen</text>
+</svg>

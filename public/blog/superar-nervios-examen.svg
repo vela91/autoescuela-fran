@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" rx="48" />
+  <path d="M0 520C160 480 360 540 560 500C760 460 940 520 1200 480V675H0V520Z" fill="#0f172a" opacity="0.55" />
+  <circle cx="320" cy="260" r="160" fill="#bae6fd" opacity="0.25" />
+  <circle cx="320" cy="260" r="110" fill="#f8fafc" opacity="0.5" />
+  <path d="M270 230C270 215 280 200 300 200H340C360 200 370 215 370 230V250C370 270 360 280 340 280H300C280 280 270 270 270 250V230Z" fill="#1e3a8a" />
+  <rect x="286" y="180" width="68" height="40" rx="18" fill="#0ea5e9" />
+  <circle cx="300" cy="330" r="16" fill="#38bdf8" />
+  <circle cx="340" cy="330" r="16" fill="#38bdf8" />
+  <rect x="470" y="130" width="540" height="260" rx="32" fill="#f8fafc" opacity="0.1" />
+  <text x="520" y="200" fill="#f8fafc" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="56" font-weight="700">Gestiona los nervios</text>
+  <text x="520" y="260" fill="#e0f2fe" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="500">Respiración · Visualización · Confianza</text>
+  <text x="520" y="312" fill="#bae6fd" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="28">Llegarás al examen con tranquilidad</text>
+</svg>
