@@ -3,9 +3,14 @@ import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { LanguageProvider } from '@/hooks/use-language'
 import {
+  SITE_ADDRESS,
+  SITE_ALTERNATE_NAMES,
+  SITE_CONTACT,
   SITE_DEFAULT_OG_IMAGE,
   SITE_DEFAULT_OG_IMAGE_PATH,
   SITE_DESCRIPTION,
+  SITE_GEO,
+  SITE_KEYWORDS,
   SITE_LOCALE,
   SITE_LOGO,
   SITE_LOGO_PATH,
@@ -21,8 +26,14 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
   alternates: {
     canonical: '/',
+    languages: {
+      'es-ES': '/',
+      'ca-ES': '/?lang=ca',
+      'en-GB': '/?lang=en',
+    },
   },
   openGraph: {
     title: `${SITE_NAME} - Salou`,
@@ -30,6 +41,8 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: SITE_LOCALE,
+    alternateLocale: ['ca_ES', 'en_GB'],
+    countryName: 'Spain',
     type: 'website',
     images: [
       {
@@ -45,6 +58,26 @@ export const metadata: Metadata = {
     title: `${SITE_NAME} - Salou`,
     description: SITE_DESCRIPTION,
     images: [SITE_DEFAULT_OG_IMAGE],
+    site: '@autoescolafran',
+  },
+  category: 'education',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      maxSnippet: -1,
+      maxImagePreview: 'large',
+      maxVideoPreview: -1,
+    },
+  },
+  other: {
+    'geo.region': 'ES-T',
+    'geo.placename': 'Salou',
+    'geo.position': `${SITE_GEO.latitude};${SITE_GEO.longitude}`,
+    ICBM: `${SITE_GEO.latitude}, ${SITE_GEO.longitude}`,
+    'og:locale:alternate': 'ca_ES,en_GB',
   },
   icons: {
     icon: SITE_LOGO_PATH,
@@ -92,6 +125,80 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'DrivingSchool',
+    name: SITE_NAME,
+    alternateName: SITE_ALTERNATE_NAMES,
+    url: SITE_URL,
+    image: `${SITE_URL}${SITE_DEFAULT_OG_IMAGE}`,
+    description: SITE_DESCRIPTION,
+    telephone: SITE_CONTACT.telephone,
+    email: SITE_CONTACT.email,
+    address: {
+      '@type': 'PostalAddress',
+      ...SITE_ADDRESS,
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: SITE_GEO.latitude,
+      longitude: SITE_GEO.longitude,
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Salou' },
+      { '@type': 'AdministrativeArea', name: 'Tarragona' },
+      { '@type': 'TouristDestination', name: 'Costa Daurada' },
+    ],
+    availableLanguage: [
+      { '@type': 'Language', name: 'Spanish', alternateName: 'es' },
+      { '@type': 'Language', name: 'Catalan', alternateName: 'ca' },
+      { '@type': 'Language', name: 'English', alternateName: 'en' },
+    ],
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '10:00',
+        closes: '14:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '16:00',
+        closes: '20:00',
+      },
+    ],
+    sameAs: [
+      'https://autoescuelafran.com',
+      'https://www.google.com/maps/place/AUTOESCOLA+FRAN.+En+Salou./@41.0784008,1.1285014,17z/data=!3m1!4b1!4m6!3m5!1s0x12a15baea7a6e4c5:0xee1cd0fb3d0d334f!8m2!3d41.0784008!4d1.1310763!16s%2Fg%2F11xtmpmbx8',
+    ],
+    makesOffer: [
+      {
+        '@type': 'Offer',
+        name: 'Permiso B en Salou',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Curso intensivo y clases prácticas para el permiso B en Salou',
+          availableLanguage: ['es', 'ca', 'en'],
+        },
+        areaServed: 'Salou',
+      },
+    ],
+    serviceArea: {
+      '@type': 'GeoCircle',
+      geoMidpoint: {
+        '@type': 'GeoCoordinates',
+        latitude: SITE_GEO.latitude,
+        longitude: SITE_GEO.longitude,
+      },
+      geoRadius: 15000,
+    },
+    potentialAction: {
+      '@type': 'ContactAction',
+      target: `${SITE_URL}/contacte`,
+      name: 'Contactar con Autoescola Fran en Salou',
+    },
+  } as const
   return (
     <html lang="es">
       <head>
@@ -109,6 +216,9 @@ html {
   --font-mono: ${GeistMono.variable};
 }
         `}</style>
+        <meta name="format-detection" content="telephone=yes,address=yes,email=yes" />
+        <meta name="language" content="es-ES,ca-ES,en-GB" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
       <body>
         <LanguageProvider>
