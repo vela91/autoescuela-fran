@@ -7,10 +7,13 @@ import {
   SITE_ALTERNATE_NAMES,
   SITE_CONTACT,
   SITE_DEFAULT_OG_IMAGE,
+  SITE_DEFAULT_OG_IMAGE_PATH,
   SITE_DESCRIPTION,
   SITE_GEO,
   SITE_KEYWORDS,
   SITE_LOCALE,
+  SITE_LOGO,
+  SITE_LOGO_PATH,
   SITE_NAME,
   SITE_URL,
 } from '@/lib/site-metadata'
@@ -77,10 +80,44 @@ export const metadata: Metadata = {
     'og:locale:alternate': 'ca_ES,en_GB',
   },
   icons: {
-    icon: '/images/logo.png',
-    shortcut: '/images/logo.png',
-    apple: '/images/logo.png',
+    icon: SITE_LOGO_PATH,
+    shortcut: SITE_LOGO_PATH,
+    apple: SITE_LOGO_PATH,
   },
+}
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: SITE_LOGO,
+  image: SITE_DEFAULT_OG_IMAGE,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Calle Barcelona 35, local 3',
+    addressLocality: 'Salou',
+    addressRegion: 'Tarragona',
+    postalCode: '43840',
+    addressCountry: 'ES',
+  },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      telephone: '+34 977 017 165',
+      contactType: 'customer service',
+      areaServed: 'ES',
+      availableLanguage: ['ca', 'es', 'en'],
+    },
+    {
+      '@type': 'ContactPoint',
+      telephone: '+34 610 777 027',
+      contactType: 'customer service',
+      contactOption: 'TollFree',
+      areaServed: 'ES',
+      availableLanguage: ['ca', 'es', 'en'],
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -165,6 +202,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <meta itemProp="image" content={SITE_DEFAULT_OG_IMAGE} />
         <style>{`
 html {
   font-family: ${GeistSans.style.fontFamily};
