@@ -8,7 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
+  ArrowRight,
   Car,
+  CheckCircle2,
   Clock,
   Users,
   Star,
@@ -20,8 +22,20 @@ import Link from "next/link";
 
 const translations = {
   ca: {
-    heroTitle: "El teu futur comença a Autoescola Fran.",
+    heroBadge: "Autoescola a Salou",
+    heroTitle: "Autoescola Fran: la teva autoescola a Salou",
+    heroSubtitle:
+      "Cursos intensius i classes pràctiques per obtenir el carnet de conduir a la Costa Daurada.",
+    heroDescription:
+      "Aprèn amb instructors acreditats que t'atendran en català, castellà i anglès.",
+    heroHighlights: [
+      "Curs intensiu, classes teòriques i pràctiques al cor de Salou.",
+      "Resultats excel·lents als exàmens oficials de la DGT.",
+      "Autoescola de referència per a alumnes locals i internacionals.",
+    ],
+    heroImageAlt: "Equip d'Autoescola Fran amb alumnes a Salou",
     heroButton: "VEURE PERMISOS",
+    heroSecondaryButton: "Parla amb nosaltres",
     quickAccessButton: "TEVES NOTES D'EXAMEN",
     intensiveBanner: {
       title: "Curs intensiu del 3 al 7 de novembre.",
@@ -31,7 +45,7 @@ const translations = {
     whyChooseUs: {
       title: "Per què escollir Autoescola Fran?",
       subtitle:
-        "Instructors amb experiència immensa, els millors preus del mercat i ofertes exclusives per als nostres alumnes",
+        "Instructors amb una experiència immensa a Salou, els millors preus del mercat i ofertes exclusives per als nostres alumnes",
     },
     valueProps: {
       modern: "Vehicles Moderns",
@@ -54,8 +68,20 @@ const translations = {
     finalCtaButton: "CONTACTA'NS",
   },
   es: {
-    heroTitle: "Tu futuro empieza en Autoescola Fran.",
+    heroBadge: "Autoescuela en Salou",
+    heroTitle: "Autoescola Fran: tu autoescuela en Salou",
+    heroSubtitle:
+      "Cursos intensivos y clases prácticas para sacar el carnet en la Costa Dorada.",
+    heroDescription:
+      "Profesorado experto que te atiende en castellano, catalán e inglés.",
+    heroHighlights: [
+      "Curso intensivo, clases teóricas y prácticas en Salou.",
+      "Alto índice de aprobados en los exámenes oficiales de la DGT.",
+      "Autoescuela recomendada por alumnos locales e internacionales.",
+    ],
+    heroImageAlt: "Equipo de Autoescola Fran con alumnos en Salou",
     heroButton: "VER PERMISOS",
+    heroSecondaryButton: "Habla con nosotros",
     quickAccessButton: "TUS NOTAS DE EXAMEN",
     intensiveBanner: {
       title: "Curso intensivo del 3 al 7 de noviembre.",
@@ -65,7 +91,7 @@ const translations = {
     whyChooseUs: {
       title: "¿Por qué elegir Autoescola Fran?",
       subtitle:
-        "Instructores con experiencia inmensa, los mejores precios del mercado y ofertas exclusivas para nuestros alumnos",
+        "Instructores con una experiencia inmensa en Salou, los mejores precios del mercado y ofertas exclusivas para nuestros alumnos",
     },
     valueProps: {
       modern: "Vehículos Modernos",
@@ -88,8 +114,20 @@ const translations = {
     finalCtaButton: "CONTÁCTANOS",
   },
   en: {
-    heroTitle: "Your future starts at Autoescola Fran.",
+    heroBadge: "Driving school in Salou",
+    heroTitle: "Autoescola Fran: your driving school in Salou",
+    heroSubtitle:
+      "Intensive courses and practical lessons to earn your license on the Costa Daurada.",
+    heroDescription:
+      "Experienced instructors who teach in English, Spanish and Catalan.",
+    heroHighlights: [
+      "Fast-track theory and driving lessons in Salou.",
+      "Outstanding pass rates for official DGT exams.",
+      "Trusted by local residents and international students.",
+    ],
+    heroImageAlt: "Autoescola Fran instructors with students in Salou",
     heroButton: "VIEW LICENSES",
+    heroSecondaryButton: "Talk to us",
     quickAccessButton: "YOUR EXAM RESULTS",
     intensiveBanner: {
       title: "Intensive course from November 3rd to 7th.",
@@ -99,7 +137,7 @@ const translations = {
     whyChooseUs: {
       title: "Why choose Autoescola Fran?",
       subtitle:
-        "Instructors with immense experience, the best market prices and exclusive offers for our students",
+        "Instructors with extensive experience in Salou, the best market prices and exclusive offers for our students",
     },
     valueProps: {
       modern: "Modern Vehicles",
@@ -195,6 +233,67 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-black">
       <Header />
+
+      {/* Hero Section */}
+      <section className="bg-gradient-to-b from-black via-gray-950 to-black py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="space-y-6">
+              <Badge className="w-fit bg-yellow-500/10 text-yellow-400 border border-yellow-400/40 uppercase tracking-[0.2em] px-4 py-1">
+                {t.heroBadge}
+              </Badge>
+              <h1 className="text-4xl md:text-6xl font-black text-white leading-tight">
+                {t.heroTitle}
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-200 max-w-2xl">
+                {t.heroSubtitle}
+              </p>
+              <p className="text-lg text-gray-300 max-w-2xl">
+                {t.heroDescription}
+              </p>
+              <ul className="space-y-3 text-left">
+                {t.heroHighlights.map((highlight) => (
+                  <li
+                    key={highlight}
+                    className="flex items-start gap-3 text-gray-200"
+                  >
+                    <CheckCircle2 className="h-5 w-5 text-yellow-400 mt-1 flex-shrink-0" />
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-col gap-4 pt-4 sm:flex-row">
+                <Link href="/permisos">
+                  <Button className="bg-yellow-400 text-black hover:bg-yellow-500 shadow-[0_0_25px_rgba(250,204,21,0.35)] px-8 py-6 text-lg font-bold rounded-xl transition-transform hover:scale-[1.02]">
+                    {t.heroButton}
+                    <ArrowRight className="h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link href="/contacte">
+                  <Button
+                    variant="outline"
+                    className="border-yellow-400 text-yellow-400 hover:bg-yellow-400/10 px-8 py-6 text-lg font-bold rounded-xl"
+                  >
+                    {t.heroSecondaryButton}
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[3rem] bg-gradient-to-tr from-yellow-500/25 via-yellow-500/10 to-transparent blur-3xl" />
+              <Image
+                src="/driving-school-team.png"
+                alt={t.heroImageAlt}
+                width={640}
+                height={480}
+                priority
+                className="w-full rounded-[2.5rem] border border-yellow-500/20 object-cover shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Intensive Course Banner */}
       <section className="py-16 bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-400 relative overflow-hidden">
