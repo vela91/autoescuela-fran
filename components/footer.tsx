@@ -10,7 +10,6 @@ const footerTranslations = {
     quickLinks: 'Enllaços Ràpids',
     contact: 'Contacte',
     address: 'Calle Barcelona 35, local 3, 43840 Salou, Tarragona',
-    schedule: 'Horari: 10:00-14:00 i 16:00-20:00',
     examNotes: 'Consulta Notes D\'Examen',
     followUs: 'Segueix-nos',
     intensiveCourse: 'Curs Intensiu'
@@ -19,7 +18,6 @@ const footerTranslations = {
     quickLinks: 'Enlaces Rápidos',
     contact: 'Contacto',
     address: 'Calle Barcelona 35, local 3, 43840 Salou, Tarragona',
-    schedule: 'Horario: 10:00-14:00 y 16:00-20:00',
     examNotes: 'Consulta Notas de Examen',
     followUs: 'Síguenos',
     intensiveCourse: 'Curso Intensivo'
@@ -28,7 +26,6 @@ const footerTranslations = {
     quickLinks: 'Quick Links',
     contact: 'Contact',
     address: 'Calle Barcelona 35, local 3, 43840 Salou, Tarragona',
-    schedule: 'Schedule: 10:00-14:00 and 16:00-20:00',
     examNotes: 'Check Exam Results',
     followUs: 'Follow Us',
     intensiveCourse: 'Intensive Course'
@@ -75,7 +72,6 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">{t.contact}</h3>
             <div className="space-y-2 text-gray-300 text-sm">
               <p>{t.address}</p>
-              <p>{t.schedule}</p>
               <p>
                 <a href="mailto:autoescolafransalou@gmail.com" className="hover:text-yellow-400 transition-colors">
                   autoescolafransalou@gmail.com

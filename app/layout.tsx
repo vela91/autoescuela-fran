@@ -107,7 +107,7 @@ const organizationSchema = {
       telephone: '+34 977 017 165',
       contactType: 'customer service',
       areaServed: 'ES',
-      availableLanguage: ['ca', 'es', 'en'],
+      availableLanguage: ['es'],
     },
     {
       '@type': 'ContactPoint',
@@ -115,7 +115,7 @@ const organizationSchema = {
       contactType: 'customer service',
       contactOption: 'TollFree',
       areaServed: 'ES',
-      availableLanguage: ['ca', 'es', 'en'],
+      availableLanguage: ['es'],
     },
   ],
 }
@@ -151,22 +151,6 @@ export default function RootLayout({
     ],
     availableLanguage: [
       { '@type': 'Language', name: 'Spanish', alternateName: 'es' },
-      { '@type': 'Language', name: 'Catalan', alternateName: 'ca' },
-      { '@type': 'Language', name: 'English', alternateName: 'en' },
-    ],
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '10:00',
-        closes: '14:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '16:00',
-        closes: '20:00',
-      },
     ],
     sameAs: [
       'https://autoescuelafran.com',
@@ -179,7 +163,7 @@ export default function RootLayout({
         itemOffered: {
           '@type': 'Service',
           name: 'Curso intensivo y clases prácticas para el permiso B en Salou',
-          availableLanguage: ['es', 'ca', 'en'],
+          availableLanguage: ['es'],
         },
         areaServed: 'Salou',
       },

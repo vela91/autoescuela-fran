@@ -22,8 +22,6 @@ const translations = {
     landlineText: "977 017 165",
     whatsapp: "WhatsApp",
     whatsappText: "610 777 027",
-    schedule: "Horari d'Oficina",
-    scheduleText: "Horari d'oficina: 10:00 - 14:00 i 16:00 - 20:00\nClasses teòriques: 10:00 i 18:00 de dilluns a divendres\nCursos intensius de teòrica cada mes",
     contactForm: "Formulari de Contacte",
     name: "Nom complet",
     phone: "Telèfon",
@@ -43,8 +41,6 @@ const translations = {
     landlineText: "977 017 165",
     whatsapp: "WhatsApp", 
     whatsappText: "610 777 027",
-    schedule: "Horario de Oficina",
-    scheduleText: "Horario de oficina: 10:00 - 14:00 y 16:00 - 20:00\nClases teóricas: 10:00 y 18:00 de lunes a viernes\nCursos intensivos de teórica cada mes",
     contactForm: "Formulario de Contacto",
     name: "Nombre completo",
     phone: "Teléfono",
@@ -64,8 +60,6 @@ const translations = {
     landlineText: "977 017 165",
     whatsapp: "WhatsApp",
     whatsappText: "610 777 027",
-    schedule: "Office Hours",
-    scheduleText: "Office hours: 10:00 - 14:00 and 16:00 - 20:00\nTheory classes: 10:00 and 18:00 Monday to Friday\nIntensive theory courses every month",
     contactForm: "Contact Form",
     name: "Full name",
     phone: "Phone",
@@ -182,18 +176,6 @@ export default function ContactPage() {
                         >
                           {t.whatsappText}
                         </a>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-gray-800 border-gray-700">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <Clock className="w-6 h-6 text-yellow-400 mt-1" />
-                      <div>
-                        <h3 className="font-semibold text-white mb-2">{t.schedule}</h3>
-                        <p className="text-gray-300 whitespace-pre-line">{t.scheduleText}</p>
                       </div>
                     </div>
                   </CardContent>

@@ -16,6 +16,7 @@ import {
   Star,
   ChevronLeft,
   ChevronRight,
+  Zap,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,21 +27,22 @@ const translations = {
     heroTitle: "Autoescola Fran: la teva autoescola a Salou",
     heroSubtitle:
       "Cursos intensius i classes pràctiques per obtenir el carnet de conduir a la Costa Daurada.",
-    heroDescription:
-      "Aprèn amb instructors acreditats que t'atendran en català, castellà i anglès.",
     heroHighlights: [
       "Curs intensiu, classes teòriques i pràctiques al cor de Salou.",
       "Resultats excel·lents als exàmens oficials de la DGT.",
-      "Autoescola de referència per a alumnes locals i internacionals.",
+      "Autoescola recomanada per antics alumnes.",
     ],
     heroImageAlt: "Equip d'Autoescola Fran amb alumnes a Salou",
     heroButton: "VEURE PERMISOS",
     heroSecondaryButton: "Parla amb nosaltres",
     quickAccessButton: "TEVES NOTES D'EXAMEN",
     intensiveBanner: {
-      title: "Curs intensiu del 3 al 7 de novembre.",
-      schedule: "De 16:00h. a 20:00h.",
+      title: "Curs intensiu gener - Inscripcions obertes!",
       cta: "Reserva la teva plaça.",
+    },
+    automaticCarBanner: {
+      title: "Pròximament: Cotxe automàtic!",
+      description: "Aviat podràs aprendre a conduir amb vehicles de transmissió automàtica.",
     },
     whyChooseUs: {
       title: "Per què escollir Autoescola Fran?",
@@ -72,21 +74,22 @@ const translations = {
     heroTitle: "Autoescola Fran: tu autoescuela en Salou",
     heroSubtitle:
       "Cursos intensivos y clases prácticas para sacar el carnet en la Costa Dorada.",
-    heroDescription:
-      "Profesorado experto que te atiende en castellano, catalán e inglés.",
     heroHighlights: [
       "Curso intensivo, clases teóricas y prácticas en Salou.",
       "Alto índice de aprobados en los exámenes oficiales de la DGT.",
-      "Autoescuela recomendada por alumnos locales e internacionales.",
+      "Autoescuela recomendada por antiguos alumnos.",
     ],
     heroImageAlt: "Equipo de Autoescola Fran con alumnos en Salou",
     heroButton: "VER PERMISOS",
     heroSecondaryButton: "Habla con nosotros",
     quickAccessButton: "TUS NOTAS DE EXAMEN",
     intensiveBanner: {
-      title: "Curso intensivo del 3 al 7 de noviembre.",
-      schedule: "De 16:00h. a 20:00h.",
+      title: "Curso intensivo enero - ¡Inscripciones abiertas!",
       cta: "Reserva tu plaza.",
+    },
+    automaticCarBanner: {
+      title: "¡Próximamente: Coche automático!",
+      description: "Pronto podrás aprender a conducir con vehículos de transmisión automática.",
     },
     whyChooseUs: {
       title: "¿Por qué elegir Autoescola Fran?",
@@ -118,21 +121,22 @@ const translations = {
     heroTitle: "Autoescola Fran: your driving school in Salou",
     heroSubtitle:
       "Intensive courses and practical lessons to earn your license on the Costa Daurada.",
-    heroDescription:
-      "Experienced instructors who teach in English, Spanish and Catalan.",
     heroHighlights: [
       "Fast-track theory and driving lessons in Salou.",
       "Outstanding pass rates for official DGT exams.",
-      "Trusted by local residents and international students.",
+      "Recommended by former students.",
     ],
     heroImageAlt: "Autoescola Fran instructors with students in Salou",
     heroButton: "VIEW LICENSES",
     heroSecondaryButton: "Talk to us",
     quickAccessButton: "YOUR EXAM RESULTS",
     intensiveBanner: {
-      title: "Intensive course from November 3rd to 7th.",
-      schedule: "From 4:00 PM to 8:00 PM.",
+      title: "January intensive course - Registrations open!",
       cta: "Reserve your spot.",
+    },
+    automaticCarBanner: {
+      title: "Coming soon: Automatic car!",
+      description: "Soon you'll be able to learn to drive with automatic transmission vehicles.",
     },
     whyChooseUs: {
       title: "Why choose Autoescola Fran?",
@@ -248,9 +252,6 @@ export default function HomePage() {
               <p className="text-xl md:text-2xl text-gray-200 max-w-2xl">
                 {t.heroSubtitle}
               </p>
-              <p className="text-lg text-gray-300 max-w-2xl">
-                {t.heroDescription}
-              </p>
               <ul className="space-y-3 text-left">
                 {t.heroHighlights.map((highlight) => (
                   <li
@@ -272,7 +273,7 @@ export default function HomePage() {
                 <Link href="/contacte">
                   <Button
                     variant="outline"
-                    className="border-yellow-400 text-yellow-400 hover:bg-yellow-400/10 px-8 py-6 text-lg font-bold rounded-xl"
+                    className="border-2 border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-black px-8 py-6 text-lg font-bold rounded-xl transition-all duration-300"
                   >
                     {t.heroSecondaryButton}
                   </Button>
@@ -295,6 +296,38 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Automatic Car Banner - NEW */}
+      <section className="py-16 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden border-y-4 border-yellow-400">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/10 to-transparent"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex justify-center mb-6">
+              <div className="relative">
+                <div className="w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center shadow-2xl">
+                  <Car className="w-14 h-14 text-black" />
+                </div>
+                <div className="absolute -inset-2 bg-yellow-400 rounded-full opacity-30 animate-ping"></div>
+              </div>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-black text-yellow-400 mb-4 leading-tight uppercase tracking-wider">
+              {t.automaticCarBanner.title}
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+              {t.automaticCarBanner.description}
+            </p>
+            <div className="mt-8 flex justify-center">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse delay-100"></div>
+                <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse delay-200"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Intensive Course Banner */}
       <section className="py-16 bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-400 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -303,15 +336,9 @@ export default function HomePage() {
         </div>
         <div className="container mx-auto px-4 py-12 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-4 leading-tight drop-shadow-md">
+            <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-8 leading-tight drop-shadow-md">
               {t.intensiveBanner.title}
             </h2>
-            <p className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 drop-shadow-md">
-              {t.intensiveBanner.schedule}
-            </p>
-            <p className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 drop-shadow-md">
-              {t.intensiveBanner.cta}
-            </p>
             <Link href="/contacte">
               <Button className="bg-gray-900 hover:bg-black text-white px-10 py-6 text-xl font-bold rounded-full shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:shadow-[0_0_50px_rgba(0,0,0,0.9)] transform transition-all duration-300 hover:scale-110">
                 {t.intensiveBanner.cta}
