@@ -8,7 +8,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { MapPin, Mail, MessageCircle, Clock, Phone } from 'lucide-react'
+import { MapPin, Mail, MessageCircle, Clock, Phone, Loader2, CheckCircle, AlertCircle } from 'lucide-react'
 
 const translations = {
   ca: {
@@ -28,6 +28,9 @@ const translations = {
     subject: "Assumpte",
     message: "Missatge",
     send: "Enviar Missatge",
+    sending: "Enviant...",
+    success: "Missatge enviat correctament! Et respondrem aviat.",
+    error: "Error enviant el missatge. Si us plau, intenta-ho més tard.",
     location: "La nostra ubicació"
   },
   es: {
@@ -47,6 +50,9 @@ const translations = {
     subject: "Asunto",
     message: "Mensaje",
     send: "Enviar Mensaje",
+    sending: "Enviando...",
+    success: "¡Mensaje enviado correctamente! Te responderemos pronto.",
+    error: "Error al enviar el mensaje. Por favor, inténtalo más tarde.",
     location: "Nuestra ubicación"
   },
   en: {
@@ -66,6 +72,9 @@ const translations = {
     subject: "Subject",
     message: "Message",
     send: "Send Message",
+    sending: "Sending...",
+    success: "Message sent successfully! We'll respond soon.",
+    error: "Error sending message. Please try again later.",
     location: "Our location"
   }
 }
@@ -79,13 +88,51 @@ export default function ContactPage() {
     subject: '',
     message: ''
   })
-  
+  const [isLoading, setIsLoading] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
   const t = translations[language]
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
+    setIsLoading(true)
+    setSubmitStatus('idle')
+
+    try {
+      // Enviar los datos a la API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        // Limpiar el formulario
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        })
+        // Ocultar el mensaje de éxito después de 5 segundos
+        setTimeout(() => setSubmitStatus('idle'), 5000)
+      } else {
+        setSubmitStatus('error')
+        // Ocultar el mensaje de error después de 5 segundos
+        setTimeout(() => setSubmitStatus('idle'), 5000)
+      }
+    } catch (error) {
+      console.error('Error sending email:', error)
+      setSubmitStatus('error')
+      // Ocultar el mensaje de error después de 5 segundos
+      setTimeout(() => setSubmitStatus('idle'), 5000)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -264,11 +311,34 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <Button 
+                    {/* Mensajes de feedback */}
+                    {submitStatus === 'success' && (
+                      <div className="bg-green-900/20 border border-green-500 rounded-lg p-4 flex items-center gap-3">
+                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <p className="text-green-400 text-sm">{t.success}</p>
+                      </div>
+                    )}
+
+                    {submitStatus === 'error' && (
+                      <div className="bg-red-900/20 border border-red-500 rounded-lg p-4 flex items-center gap-3">
+                        <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
+                        <p className="text-red-400 text-sm">{t.error}</p>
+                      </div>
+                    )}
+
+                    <Button
                       type="submit"
-                      className="bg-yellow-400 hover:bg-yellow-500 text-black w-full py-3 font-bold shadow-lg hover:shadow-yellow-400/50 transition-all duration-200"
+                      disabled={isLoading}
+                      className="bg-yellow-400 hover:bg-yellow-500 text-black w-full py-3 font-bold shadow-lg hover:shadow-yellow-400/50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {t.send}
+                      {isLoading ? (
+                        <span className="flex items-center justify-center gap-2">
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          {t.sending}
+                        </span>
+                      ) : (
+                        t.send
+                      )}
                     </Button>
                   </form>
                 </CardContent>
