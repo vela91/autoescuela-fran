@@ -390,14 +390,6 @@ export default function LicensesPage() {
                               {license.age}
                             </span>
                           </div>
-                          <div className="flex justify-between border-b border-gray-700 pb-2">
-                            <span className="text-gray-400 text-sm font-medium">
-                              {t.duration}
-                            </span>
-                            <span className="font-bold text-yellow-400">
-                              {license.duration}
-                            </span>
-                          </div>
                         </div>
 
                         <div className="flex flex-wrap gap-2">

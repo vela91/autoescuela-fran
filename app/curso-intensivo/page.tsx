@@ -12,8 +12,8 @@ import Link from 'next/link'
 
 const translations = {
   ca: {
-    title: "Curs Intensiu Gener - Inscripcions Obertes!",
-    subtitle: "Aprova l'examen teòric en temps rècord",
+    title: "Curs Intensiu Maig - Inscripcions Obertes!",
+    subtitle: "Prepara't per a l'examen teòric amb classes diàries",
     description: "Els nostres cursos intensius estan dissenyats per a persones que necessiten obtenir el carnet de conduir ràpidament. Amb classes diàries i professors experts, maximitzem el teu aprenentatge en el mínim temps possible.",
     nextCourse: "Pròxim Curs",
     duration: "Durada del Curs",
@@ -23,7 +23,7 @@ const translations = {
     frequency: "Freqüència",
     frequencyValue: "Curs mensual",
     onlineTitle: "Opció Teòrica Online",
-    onlineDescription: "Si prefereixes estudiar des de casa, accedeix a les classes en directe i als materials gravats a la nostra plataforma digital. Pots seguir el mateix programa intensiu, interactuar amb l'instructor i preparar-te per a l'examen sense desplaçar-te.",
+    onlineDescription: "Si prefereixes estudiar des de casa, accedeix a les classes gravades i als materials a la nostra plataforma digital. Pots seguir el mateix programa intensiu i preparar-te per a l'examen al teu ritme, sense desplaçar-te.",
     whatIncludes: "Què inclou el curs?",
     includes: [
       "Classes teòriques diàries",
@@ -76,8 +76,8 @@ const translations = {
     testimonialTitle: "Testimonis dels Nostres Alumnes"
   },
   es: {
-    title: "Curso Intensivo Enero - ¡Inscripciones Abiertas!",
-    subtitle: "Aprueba el examen teórico en tiempo récord",
+    title: "Curso Intensivo Mayo - ¡Inscripciones Abiertas!",
+    subtitle: "Prepárate para el examen teórico con clases diarias",
     description: "Nuestros cursos intensivos están diseñados para personas que necesitan obtener el carnet de conducir rápidamente. Con clases diarias y profesores expertos, maximizamos tu aprendizaje en el mínimo tiempo posible.",
     nextCourse: "Próximo Curso",
     duration: "Duración del Curso",
@@ -87,7 +87,7 @@ const translations = {
     frequency: "Frecuencia",
     frequencyValue: "Curso mensual",
     onlineTitle: "Opción de Teórica Online",
-    onlineDescription: "Si prefieres estudiar desde casa, accede a las clases en directo y al material grabado desde nuestra plataforma digital. Podrás seguir el mismo programa intensivo, interactuar con el instructor y prepararte para el examen sin desplazarte.",
+    onlineDescription: "Si prefieres estudiar desde casa, accede a las clases grabadas y al material desde nuestra plataforma digital. Podrás seguir el mismo programa intensivo y prepararte para el examen a tu ritmo, sin desplazarte.",
     whatIncludes: "¿Qué incluye el curso?",
     includes: [
       "Clases teóricas diarias",
@@ -140,8 +140,8 @@ const translations = {
     testimonialTitle: "Testimonios de Nuestros Alumnos"
   },
   en: {
-    title: "January Intensive Course - Registrations Open!",
-    subtitle: "Pass the theory exam in record time",
+    title: "May Intensive Course - Registrations Open!",
+    subtitle: "Prepare for the theory exam with daily classes",
     description: "Our intensive courses are designed for people who need to get their driver's license quickly. With daily classes and expert teachers, we maximize your learning in the minimum time possible.",
     nextCourse: "Next Course",
     duration: "Course Duration",
@@ -151,7 +151,7 @@ const translations = {
     frequency: "Frequency",
     frequencyValue: "Monthly course",
     onlineTitle: "Online Theory Option",
-    onlineDescription: "If you prefer learning from home, join our live sessions and recorded lessons through the digital platform. Follow the same intensive program, interact with the instructor and prepare for the exam without commuting.",
+    onlineDescription: "If you prefer learning from home, access the recorded lessons and materials through our digital platform. Follow the same intensive program and prepare for the exam at your own pace, without commuting.",
     whatIncludes: "What does the course include?",
     includes: [
       "Daily theory classes",

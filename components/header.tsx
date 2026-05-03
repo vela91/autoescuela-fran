@@ -95,27 +95,24 @@ export default function Header() {
             <div className="flex items-center space-x-2 bg-gray-800/50 rounded-full px-3 py-2 border border-gray-700">
               <button
                 onClick={() => setLanguage('ca')}
-                className={`rounded-full transition-all duration-300 ${language === 'ca' ? 'ring-2 ring-yellow-400 shadow-[0_0_10px_rgba(250,204,21,0.5)]' : 'opacity-60 hover:opacity-100 hover:scale-110'}`}
+                className={`px-2.5 py-1 rounded-full text-xs font-black tracking-wider text-yellow-400 transition-all duration-300 ${language === 'ca' ? 'ring-2 ring-yellow-400 bg-yellow-400/10 shadow-[0_0_10px_rgba(250,204,21,0.5)]' : 'opacity-70 hover:opacity-100 hover:scale-110'}`}
+                aria-label="Català"
               >
-                <Image
-                  src="/catalonia-flag.svg"
-                  alt="Bandera de Catalunya"
-                  width={24}
-                  height={18}
-                  className="rounded-sm"
-                />
+                CA
               </button>
               <button
                 onClick={() => setLanguage('es')}
-                className={`w-8 h-6 rounded-full transition-all duration-300 ${language === 'es' ? 'ring-2 ring-yellow-400 shadow-[0_0_10px_rgba(250,204,21,0.5)]' : 'opacity-60 hover:opacity-100 hover:scale-110'}`}
+                className={`px-2.5 py-1 rounded-full text-xs font-black tracking-wider text-yellow-400 transition-all duration-300 ${language === 'es' ? 'ring-2 ring-yellow-400 bg-yellow-400/10 shadow-[0_0_10px_rgba(250,204,21,0.5)]' : 'opacity-70 hover:opacity-100 hover:scale-110'}`}
+                aria-label="Español"
               >
-                🇪🇸
+                ES
               </button>
               <button
                 onClick={() => setLanguage('en')}
-                className={`w-8 h-6 rounded-full transition-all duration-300 ${language === 'en' ? 'ring-2 ring-yellow-400 shadow-[0_0_10px_rgba(250,204,21,0.5)]' : 'opacity-60 hover:opacity-100 hover:scale-110'}`}
+                className={`px-2.5 py-1 rounded-full text-xs font-black tracking-wider text-yellow-400 transition-all duration-300 ${language === 'en' ? 'ring-2 ring-yellow-400 bg-yellow-400/10 shadow-[0_0_10px_rgba(250,204,21,0.5)]' : 'opacity-70 hover:opacity-100 hover:scale-110'}`}
+                aria-label="English"
               >
-                🇬🇧
+                EN
               </button>
             </div>
             <Button className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold px-8 py-2.5 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.6)] hover:shadow-[0_0_30px_rgba(250,204,21,1)] hover:scale-105 border-2 border-yellow-300">
@@ -157,27 +154,24 @@ export default function Header() {
               <div className="flex items-center space-x-2 pt-4">
                 <button
                   onClick={() => setLanguage('ca')}
-                  className={`w-8 h-6 rounded overflow-hidden transition-all ${language === 'ca' ? 'ring-2 ring-yellow-400' : 'opacity-70'}`}
+                  className={`px-2.5 py-1 rounded text-xs font-black tracking-wider text-yellow-400 transition-all ${language === 'ca' ? 'ring-2 ring-yellow-400 bg-yellow-400/10' : 'opacity-70'}`}
+                  aria-label="Català"
                 >
-                  <Image
-                    src="/catalonia-flag.svg"
-                    alt="Bandera de Catalunya"
-                    width={32}
-                    height={24}
-                    className="w-full h-full object-cover"
-                  />
+                  CA
                 </button>
                 <button
                   onClick={() => setLanguage('es')}
-                  className={`w-8 h-6 rounded transition-all ${language === 'es' ? 'ring-2 ring-yellow-400' : 'opacity-70'}`}
+                  className={`px-2.5 py-1 rounded text-xs font-black tracking-wider text-yellow-400 transition-all ${language === 'es' ? 'ring-2 ring-yellow-400 bg-yellow-400/10' : 'opacity-70'}`}
+                  aria-label="Español"
                 >
-                  🇪🇸
+                  ES
                 </button>
                 <button
                   onClick={() => setLanguage('en')}
-                  className={`w-8 h-6 rounded transition-all ${language === 'en' ? 'ring-2 ring-yellow-400' : 'opacity-70'}`}
+                  className={`px-2.5 py-1 rounded text-xs font-black tracking-wider text-yellow-400 transition-all ${language === 'en' ? 'ring-2 ring-yellow-400 bg-yellow-400/10' : 'opacity-70'}`}
+                  aria-label="English"
                 >
-                  🇬🇧
+                  EN
                 </button>
               </div>
               <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold w-full mt-4 shadow-[0_0_15px_rgba(250,204,21,0.5)] hover:shadow-[0_0_25px_rgba(250,204,21,0.8)] transition-all duration-300">
