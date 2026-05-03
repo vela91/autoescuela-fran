@@ -45,6 +45,8 @@ const translations = {
     intensiveCourse: {
       label: "Oferta activa",
       title: "Curs intensiu",
+      description:
+        "Aprèn a conduir en poques setmanes amb classes diàries, atenció personalitzada i tot el suport per superar els exàmens de la DGT.",
       monthLabel: "Mes",
       monthValue: "Maig",
       scheduleLabel: "Horari",
@@ -124,6 +126,8 @@ const translations = {
     intensiveCourse: {
       label: "Oferta activa",
       title: "Curso intensivo",
+      description:
+        "Aprende a conducir en pocas semanas con clases diarias, atención personalizada y todo el apoyo para superar los exámenes de la DGT.",
       monthLabel: "Mes",
       monthValue: "Mayo",
       scheduleLabel: "Horario",
@@ -203,6 +207,8 @@ const translations = {
     intensiveCourse: {
       label: "Active offer",
       title: "Intensive course",
+      description:
+        "Learn to drive in a few weeks with daily classes, personalised support and everything you need to pass the official DGT exams.",
       monthLabel: "Month",
       monthValue: "May",
       scheduleLabel: "Schedule",
@@ -344,7 +350,7 @@ export default function HomePage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-[center_75%]"
         />
         {/* Top-only darkening so title + buttons stay readable; rest of photo untouched */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/15 to-transparent" />
@@ -382,63 +388,92 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Intensive Course — floating data card */}
-      <section className="py-20 md:py-28 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <Card className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-yellow-400 shadow-[0_0_60px_rgba(250,204,21,0.15)] hover:shadow-[0_0_80px_rgba(250,204,21,0.25)] transition-all duration-500">
-              <CardContent className="p-8 md:p-12">
-                {/* Top label row */}
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="inline-flex items-center bg-yellow-400 text-black text-[11px] font-black uppercase tracking-[0.3em] px-3 py-1.5 rounded-full">
+      {/* Intensive Course — crisp photo behind, frosted glass card on top */}
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        {/* Crisp photo — sharp, fully visible */}
+        <Image
+          src="/intensive-bg-avinguda.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          aria-hidden
+          className="object-cover"
+        />
+        {/* Mood tint over the photo (keeps it readable as background) */}
+        <div className="absolute inset-0 bg-black/35" />
+
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <Card className="relative overflow-hidden bg-gray-900/55 backdrop-blur-2xl border border-yellow-400/30 shadow-[0_25px_80px_rgba(0,0,0,0.6),0_0_40px_rgba(250,204,21,0.15)]">
+              {/* Decorative corner glows */}
+              <div className="absolute -top-32 -right-32 w-80 h-80 bg-yellow-400/15 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-yellow-400/10 rounded-full blur-3xl pointer-events-none" />
+
+              <CardContent className="relative p-8 md:p-12 lg:p-16">
+                {/* Header row */}
+                <div className="flex items-center gap-4 mb-8">
+                  <span className="inline-flex items-center bg-yellow-400 text-black text-[10px] md:text-xs font-black uppercase tracking-[0.3em] px-3.5 py-1.5 rounded-full shadow-md">
                     {t.intensiveCourse.label}
                   </span>
-                  <div className="h-px flex-1 bg-yellow-400/30" />
+                  <div className="h-px flex-1 bg-gradient-to-r from-yellow-400/40 via-yellow-400/20 to-transparent" />
                 </div>
 
-                {/* Title */}
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-8 leading-tight">
-                  {t.intensiveCourse.title}
-                </h2>
+                {/* Split layout: content + data stack */}
+                <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-16 items-center">
+                  {/* Left column — title + description + CTA */}
+                  <div>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-5 leading-[1.05] tracking-tight">
+                      {t.intensiveCourse.title}
+                    </h2>
+                    <p className="text-base md:text-lg text-gray-300 mb-8 leading-relaxed max-w-xl">
+                      {t.intensiveCourse.description}
+                    </p>
+                    <Link href="/contacte">
+                      <Button className="bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-6 text-base font-black rounded-xl uppercase tracking-wider shadow-[0_8px_30px_rgba(250,204,21,0.4)] transition-all hover:scale-[1.02] hover:shadow-[0_8px_40px_rgba(250,204,21,0.6)]">
+                        {t.intensiveCourse.cta}
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Button>
+                    </Link>
+                  </div>
 
-                {/* Data grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                  <div className="bg-black/50 rounded-xl p-4 border border-gray-800">
-                    <Calendar className="w-5 h-5 text-yellow-400 mb-2" />
-                    <div className="text-[11px] text-gray-400 uppercase tracking-wider mb-1">
-                      {t.intensiveCourse.monthLabel}
-                    </div>
-                    <div className="text-lg font-bold text-white">
-                      {t.intensiveCourse.monthValue}
-                    </div>
-                  </div>
-                  <div className="bg-black/50 rounded-xl p-4 border border-gray-800">
-                    <Clock className="w-5 h-5 text-yellow-400 mb-2" />
-                    <div className="text-[11px] text-gray-400 uppercase tracking-wider mb-1">
-                      {t.intensiveCourse.scheduleLabel}
-                    </div>
-                    <div className="text-lg font-bold text-white">
-                      {t.intensiveCourse.scheduleValue}
-                    </div>
-                  </div>
-                  <div className="bg-black/50 rounded-xl p-4 border border-gray-800 col-span-2 md:col-span-1">
-                    <Users className="w-5 h-5 text-yellow-400 mb-2" />
-                    <div className="text-[11px] text-gray-400 uppercase tracking-wider mb-1">
-                      {t.intensiveCourse.placesLabel}
-                    </div>
-                    <div className="text-lg font-bold text-white">
-                      {t.intensiveCourse.placesValue}
-                    </div>
+                  {/* Right column — data rows */}
+                  <div className="space-y-3">
+                    {[
+                      {
+                        icon: Calendar,
+                        label: t.intensiveCourse.monthLabel,
+                        value: t.intensiveCourse.monthValue,
+                      },
+                      {
+                        icon: Clock,
+                        label: t.intensiveCourse.scheduleLabel,
+                        value: t.intensiveCourse.scheduleValue,
+                      },
+                      {
+                        icon: Users,
+                        label: t.intensiveCourse.placesLabel,
+                        value: t.intensiveCourse.placesValue,
+                      },
+                    ].map(({ icon: Icon, label, value }) => (
+                      <div
+                        key={label}
+                        className="flex items-center gap-4 bg-black/50 border border-gray-800 hover:border-yellow-400/50 rounded-xl p-4 transition-colors"
+                      >
+                        <div className="w-12 h-12 rounded-lg bg-yellow-400/10 border border-yellow-400/30 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5 text-yellow-400" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <div className="text-[11px] text-gray-500 uppercase tracking-wider mb-0.5">
+                            {label}
+                          </div>
+                          <div className="text-xl md:text-2xl font-bold text-white truncate">
+                            {value}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-
-                {/* CTA */}
-                <Link href="/contacte">
-                  <Button className="bg-yellow-400 hover:bg-yellow-500 text-black w-full md:w-auto px-10 py-6 text-base font-black rounded-xl shadow-md uppercase tracking-wider transition-all hover:scale-[1.02]">
-                    {t.intensiveCourse.cta}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
               </CardContent>
             </Card>
           </div>
