@@ -362,7 +362,7 @@ export default function HomePage() {
                 <ArrowRight className="h-4 w-4 ml-1" />
               </Button>
             </Link>
-            <Link href="/contacte">
+            <Link href="/contacte" className="sm:ml-12">
               <Button
                 variant="ghost"
                 className="text-white hover:text-yellow-400 hover:bg-white/5 px-6 py-3 text-sm font-bold rounded-lg uppercase tracking-wider border border-white/30 hover:border-yellow-400/60"
