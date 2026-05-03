@@ -119,7 +119,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Automòbils fins a 3.500kg i fins a 9 places',
       age: '18 anys',
       duration: '3-6 mesos',
-      image: '/permis-b-vw-polo.jpg',
+      image: '/permis-b-vw-polo.webp',
       details:
         'El permís B és el carnet de conduir més sol·licitat i permet conduir turismes, furgonetes i vehicles de fins a 3.500kg de massa màxima autoritzada i fins a 9 places (inclòs el conductor).',
       badge: 'popular',
@@ -131,7 +131,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Motos de fins a 35kW (47CV) de potència màxima',
       age: '18 anys',
       duration: '2-4 mesos',
-      image: '/permis-a2-kawasaki.jpg',
+      image: '/permis-a2-kawasaki.webp',
       details:
         "Permet conduir motocicletes de fins a 35kW (47CV) de potència màxima i amb una relació potència/pes inferior a 0,2kW/kg. Ja disposem de l'autorització i les motos preparades.",
       badge: 'new',
@@ -143,7 +143,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Ciclomotors de fins a 50cc i 45 km/h',
       age: '15 anys',
       duration: '-',
-      image: '/permis-am-yamaha-neos.jpg',
+      image: '/permis-am-yamaha-neos.webp',
       details:
         'Permet conduir ciclomotors de fins a 50cc i una velocitat màxima de 45 km/h. Aviat estarà disponible a la nostra autoescola.',
     },
@@ -154,7 +154,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Motos de fins a 125cc i 11kW de potència',
       age: '16 anys',
       duration: '-',
-      image: '/permis-a1-honda.jpg',
+      image: '/permis-a1-honda.webp',
       details:
         'Permet conduir motocicletes de fins a 125cc i fins a 11kW de potència. Aviat estarà disponible a la nostra autoescola.',
     },
@@ -165,7 +165,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Motos sense límit de cilindrada ni potència',
       age: '20 anys',
       duration: '-',
-      image: '/permis-a-yamaha-mt07.jpg',
+      image: '/permis-a-yamaha-mt07.webp',
       details:
         "Sense límit de cilindrada ni de potència. Cal tenir 2 anys d'experiència amb el permís A2. No té examen, és una ampliació directa.",
     },
@@ -178,7 +178,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Automóviles hasta 3.500kg y hasta 9 plazas',
       age: '18 años',
       duration: '3-6 meses',
-      image: '/permis-b-vw-polo.jpg',
+      image: '/permis-b-vw-polo.webp',
       details:
         'El permiso B es el carnet de conducir más solicitado y permite conducir turismos, furgonetas y vehículos de hasta 3.500kg de masa máxima autorizada y hasta 9 plazas (incluido el conductor).',
       badge: 'popular',
@@ -190,7 +190,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Motos de hasta 35kW (47CV) de potencia máxima',
       age: '18 años',
       duration: '2-4 meses',
-      image: '/permis-a2-kawasaki.jpg',
+      image: '/permis-a2-kawasaki.webp',
       details:
         'Permite conducir motocicletas de hasta 35kW (47CV) de potencia máxima y con una relación potencia/peso inferior a 0,2kW/kg. Ya disponemos de la autorización y las motos preparadas.',
       badge: 'new',
@@ -202,7 +202,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Ciclomotores de hasta 50cc y 45 km/h',
       age: '15 años',
       duration: '-',
-      image: '/permis-am-yamaha-neos.jpg',
+      image: '/permis-am-yamaha-neos.webp',
       details:
         'Permite conducir ciclomotores de hasta 50cc y una velocidad máxima de 45 km/h. Pronto estará disponible en nuestra autoescuela.',
     },
@@ -213,7 +213,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Motos de hasta 125cc y 11kW de potencia',
       age: '16 años',
       duration: '-',
-      image: '/permis-a1-honda.jpg',
+      image: '/permis-a1-honda.webp',
       details:
         'Permite conducir motocicletas de hasta 125cc y hasta 11kW de potencia. Pronto estará disponible en nuestra autoescuela.',
     },
@@ -224,7 +224,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Motos sin límite de cilindrada ni potencia',
       age: '20 años',
       duration: '-',
-      image: '/permis-a-yamaha-mt07.jpg',
+      image: '/permis-a-yamaha-mt07.webp',
       details:
         'Sin límite de cilindrada ni de potencia. Es necesario tener 2 años de experiencia con el permiso A2. No tiene examen, es una ampliación directa.',
     },
@@ -237,7 +237,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Cars up to 3,500kg and up to 9 seats',
       age: '18 years',
       duration: '3-6 months',
-      image: '/permis-b-vw-polo.jpg',
+      image: '/permis-b-vw-polo.webp',
       details:
         'The B license is the most requested driving license and allows you to drive passenger cars, vans and vehicles up to 3,500kg maximum authorized mass and up to 9 seats (including the driver).',
       badge: 'popular',
@@ -249,7 +249,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Motorcycles up to 35kW (47hp) maximum power',
       age: '18 years',
       duration: '2-4 months',
-      image: '/permis-a2-kawasaki.jpg',
+      image: '/permis-a2-kawasaki.webp',
       details:
         'Lets you ride motorcycles up to 35kW (47hp) of maximum power with a power-to-weight ratio below 0.2kW/kg. We already have the authorisation and the bikes ready.',
       badge: 'new',
@@ -261,7 +261,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Mopeds up to 50cc and 45 km/h',
       age: '15 years',
       duration: '-',
-      image: '/permis-am-yamaha-neos.jpg',
+      image: '/permis-am-yamaha-neos.webp',
       details:
         'Lets you ride mopeds up to 50cc with a top speed of 45 km/h. Coming soon to our driving school.',
     },
@@ -272,7 +272,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Motorcycles up to 125cc and 11kW',
       age: '16 years',
       duration: '-',
-      image: '/permis-a1-honda.jpg',
+      image: '/permis-a1-honda.webp',
       details:
         'Lets you ride motorcycles up to 125cc and up to 11kW. Coming soon to our driving school.',
     },
@@ -283,7 +283,7 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       description: 'Motorcycles with no displacement or power limit',
       age: '20 years',
       duration: '-',
-      image: '/permis-a-yamaha-mt07.jpg',
+      image: '/permis-a-yamaha-mt07.webp',
       details:
         'No displacement or power limit. Requires 2 years of experience with the A2 licence. No exam — it is a direct upgrade.',
     },

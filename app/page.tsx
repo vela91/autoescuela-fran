@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import {
   ArrowRight,
   Bike,
+  Calendar,
   Car,
   CheckCircle2,
   Clock,
@@ -41,9 +42,20 @@ const translations = {
       title: "Curs intensiu maig - 16h a 20h",
       cta: "Reserva la teva plaça",
     },
+    intensiveCourse: {
+      label: "Oferta activa",
+      title: "Curs intensiu",
+      monthLabel: "Mes",
+      monthValue: "Maig",
+      scheduleLabel: "Horari",
+      scheduleValue: "16h - 20h",
+      placesLabel: "Places",
+      placesValue: "Limitades",
+      cta: "Reserva la teva plaça",
+    },
     automaticCarBanner: {
-      title: "Pròximament: Cotxe automàtic!",
-      description: "Aviat podràs aprendre a conduir amb vehicles de transmissió automàtica.",
+      title: "Automàtic",
+      description: "",
     },
     whyChooseUs: {
       title: "Per què escollir Autoescola Fran?",
@@ -109,9 +121,20 @@ const translations = {
       title: "Curso intensivo mayo - 16h a 20h",
       cta: "Reserva tu plaza",
     },
+    intensiveCourse: {
+      label: "Oferta activa",
+      title: "Curso intensivo",
+      monthLabel: "Mes",
+      monthValue: "Mayo",
+      scheduleLabel: "Horario",
+      scheduleValue: "16h - 20h",
+      placesLabel: "Plazas",
+      placesValue: "Limitadas",
+      cta: "Reserva tu plaza",
+    },
     automaticCarBanner: {
-      title: "¡Próximamente: Coche automático!",
-      description: "Pronto podrás aprender a conducir con vehículos de transmisión automática.",
+      title: "Automático",
+      description: "",
     },
     whyChooseUs: {
       title: "¿Por qué elegir Autoescola Fran?",
@@ -177,9 +200,20 @@ const translations = {
       title: "May intensive course - 4pm to 8pm",
       cta: "Reserve your spot",
     },
+    intensiveCourse: {
+      label: "Active offer",
+      title: "Intensive course",
+      monthLabel: "Month",
+      monthValue: "May",
+      scheduleLabel: "Schedule",
+      scheduleValue: "4pm - 8pm",
+      placesLabel: "Spots",
+      placesValue: "Limited",
+      cta: "Reserve your spot",
+    },
     automaticCarBanner: {
-      title: "Coming soon: Automatic car!",
-      description: "Soon you'll be able to learn to drive with automatic transmission vehicles.",
+      title: "Automatic",
+      description: "",
     },
     whyChooseUs: {
       title: "Why choose Autoescola Fran?",
@@ -302,119 +336,134 @@ export default function HomePage() {
     <div className="min-h-screen bg-black">
       <Header />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-black via-gray-950 to-black py-16">
+      {/* Hero Section - Full screen cinematic */}
+      <section className="relative min-h-[90dvh] w-full overflow-hidden">
+        <Image
+          src="/hero-flota-autoescola-fran.webp"
+          alt={t.heroImageAlt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        {/* Top-only darkening so title + buttons stay readable; rest of photo untouched */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/15 to-transparent" />
+        {/* Vertical fade at the bottom to integrate with next section */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-black/80" />
+
+        <div className="relative z-10 container mx-auto px-4 min-h-[90dvh] flex flex-col items-center text-center justify-start pt-20 md:pt-28 pb-16">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[0.9] mb-8 drop-shadow-[0_6px_30px_rgba(0,0,0,0.95)] [text-shadow:_0_2px_20px_rgba(0,0,0,0.85)]">
+            Autoescola <span className="text-yellow-400">Fran</span>
+          </h1>
+          <div className="flex flex-col sm:flex-row items-center gap-3">
+            <Link href="/permisos">
+              <Button className="bg-yellow-400 text-black hover:bg-yellow-500 px-6 py-3 text-sm font-bold rounded-lg transition-all uppercase tracking-wider shadow-md">
+                {t.heroButton}
+                <ArrowRight className="h-4 w-4 ml-1" />
+              </Button>
+            </Link>
+            <Link href="/contacte">
+              <Button
+                variant="ghost"
+                className="text-white hover:text-yellow-400 hover:bg-white/5 px-6 py-3 text-sm font-bold rounded-lg uppercase tracking-wider border border-white/30 hover:border-yellow-400/60"
+              >
+                {t.heroSecondaryButton}
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-yellow-400/70 animate-bounce">
+          <span className="text-[10px] uppercase tracking-[0.4em] font-bold">
+            Scroll
+          </span>
+          <ChevronRight className="h-5 w-5 rotate-90" />
+        </div>
+      </section>
+
+      {/* Intensive Course — floating data card */}
+      <section className="py-20 md:py-28 bg-black">
         <div className="container mx-auto px-4">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="space-y-6">
-              <Badge className="w-fit bg-yellow-500/10 text-yellow-400 border border-yellow-400/40 uppercase tracking-[0.2em] px-4 py-1">
-                {t.heroBadge}
-              </Badge>
-              <h1 className="text-4xl md:text-6xl font-black text-white leading-tight">
-                {t.heroTitle}
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-200 max-w-2xl">
-                {t.heroSubtitle}
-              </p>
-              <ul className="space-y-3 text-left">
-                {t.heroHighlights.map((highlight) => (
-                  <li
-                    key={highlight}
-                    className="flex items-start gap-3 text-gray-200"
-                  >
-                    <CheckCircle2 className="h-5 w-5 text-yellow-400 mt-1 flex-shrink-0" />
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-col gap-4 pt-4 sm:flex-row">
-                <Link href="/permisos">
-                  <Button className="bg-yellow-400 text-black hover:bg-yellow-500 shadow-[0_0_25px_rgba(250,204,21,0.35)] px-8 py-6 text-lg font-bold rounded-xl transition-transform hover:scale-[1.02]">
-                    {t.heroButton}
-                    <ArrowRight className="h-5 w-5" />
-                  </Button>
-                </Link>
+          <div className="max-w-3xl mx-auto">
+            <Card className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-yellow-400 shadow-[0_0_60px_rgba(250,204,21,0.15)] hover:shadow-[0_0_80px_rgba(250,204,21,0.25)] transition-all duration-500">
+              <CardContent className="p-8 md:p-12">
+                {/* Top label row */}
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="inline-flex items-center bg-yellow-400 text-black text-[11px] font-black uppercase tracking-[0.3em] px-3 py-1.5 rounded-full">
+                    {t.intensiveCourse.label}
+                  </span>
+                  <div className="h-px flex-1 bg-yellow-400/30" />
+                </div>
+
+                {/* Title */}
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-8 leading-tight">
+                  {t.intensiveCourse.title}
+                </h2>
+
+                {/* Data grid */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                  <div className="bg-black/50 rounded-xl p-4 border border-gray-800">
+                    <Calendar className="w-5 h-5 text-yellow-400 mb-2" />
+                    <div className="text-[11px] text-gray-400 uppercase tracking-wider mb-1">
+                      {t.intensiveCourse.monthLabel}
+                    </div>
+                    <div className="text-lg font-bold text-white">
+                      {t.intensiveCourse.monthValue}
+                    </div>
+                  </div>
+                  <div className="bg-black/50 rounded-xl p-4 border border-gray-800">
+                    <Clock className="w-5 h-5 text-yellow-400 mb-2" />
+                    <div className="text-[11px] text-gray-400 uppercase tracking-wider mb-1">
+                      {t.intensiveCourse.scheduleLabel}
+                    </div>
+                    <div className="text-lg font-bold text-white">
+                      {t.intensiveCourse.scheduleValue}
+                    </div>
+                  </div>
+                  <div className="bg-black/50 rounded-xl p-4 border border-gray-800 col-span-2 md:col-span-1">
+                    <Users className="w-5 h-5 text-yellow-400 mb-2" />
+                    <div className="text-[11px] text-gray-400 uppercase tracking-wider mb-1">
+                      {t.intensiveCourse.placesLabel}
+                    </div>
+                    <div className="text-lg font-bold text-white">
+                      {t.intensiveCourse.placesValue}
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA */}
                 <Link href="/contacte">
-                  <Button
-                    variant="outline"
-                    className="border-2 border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-black px-8 py-6 text-lg font-bold rounded-xl transition-all duration-300"
-                  >
-                    {t.heroSecondaryButton}
+                  <Button className="bg-yellow-400 hover:bg-yellow-500 text-black w-full md:w-auto px-10 py-6 text-base font-black rounded-xl shadow-md uppercase tracking-wider transition-all hover:scale-[1.02]">
+                    {t.intensiveCourse.cta}
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[3rem] bg-gradient-to-tr from-yellow-500/25 via-yellow-500/10 to-transparent blur-3xl" />
-              <Image
-                src="/hero-flota-autoescola-fran.jpg"
-                alt={t.heroImageAlt}
-                width={1600}
-                height={1067}
-                priority
-                className="w-full rounded-[2.5rem] border border-yellow-500/20 object-cover shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Automatic Car Banner */}
-      <section className="relative py-20 md:py-28 overflow-hidden border-y-4 border-yellow-400">
+      {/* Automatic Car Banner — tall, photo-first, pill anchored to the road on the right */}
+      <section className="relative min-h-[70vh] md:min-h-[85vh] overflow-hidden border-y-4 border-yellow-400">
         <Image
-          src="/banner-cotxe-automatic.jpg"
-          alt=""
+          src="/banner-cotxe-automatic.webp"
+          alt={t.automaticCarBanner.title}
           fill
           sizes="100vw"
           className="object-cover object-center"
-          aria-hidden
         />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <div className="relative">
-                <div className="w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center shadow-2xl">
-                  <Car className="w-14 h-14 text-black" />
-                </div>
-                <div className="absolute -inset-2 bg-yellow-400 rounded-full opacity-30 animate-ping"></div>
-              </div>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-black text-yellow-400 mb-4 leading-tight uppercase tracking-wider drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
-              {t.automaticCarBanner.title}
-            </h2>
-            <p className="text-lg md:text-xl text-white max-w-2xl mx-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
-              {t.automaticCarBanner.description}
-            </p>
-            <div className="mt-8 flex justify-center">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-                <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse delay-100"></div>
-                <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse delay-200"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        {/* Subtle bottom shade so the pill reads against the road */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/10" />
 
-      {/* Intensive Course Banner */}
-      <section className="py-16 bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-400 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
-        </div>
-        <div className="container mx-auto px-4 py-12 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-8 leading-tight drop-shadow-md">
-              {t.intensiveBanner.title}
-            </h2>
-            <Link href="/contacte">
-              <Button className="bg-gray-900 hover:bg-black text-white px-10 py-6 text-xl font-bold rounded-full shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:shadow-[0_0_50px_rgba(0,0,0,0.9)] transform transition-all duration-300 hover:scale-110">
-                {t.intensiveBanner.cta}
-              </Button>
-            </Link>
+        {/* Pill anchored to the bottom-right — sits on the road */}
+        <div className="absolute right-6 md:right-12 lg:right-20 bottom-10 md:bottom-14 z-10">
+          <div className="inline-flex items-center gap-3 bg-yellow-400 text-black rounded-full px-7 py-3.5 shadow-[0_15px_45px_rgba(0,0,0,0.55),0_0_50px_rgba(250,204,21,0.5)]">
+            <Car className="w-5 h-5" strokeWidth={2.5} />
+            <span className="text-sm md:text-base font-black uppercase tracking-[0.35em]">
+              {t.automaticCarBanner.title}
+            </span>
           </div>
         </div>
       </section>
@@ -500,7 +549,7 @@ export default function HomePage() {
               <CardContent className="p-6">
                 <div className="relative overflow-hidden rounded-lg mb-4">
                   <Image
-                    src="/permis-b-vw-polo.jpg"
+                    src="/permis-b-vw-polo.webp"
                     alt={t.licenseCards.bTitle}
                     width={1400}
                     height={933}
@@ -534,7 +583,7 @@ export default function HomePage() {
               <CardContent className="p-6">
                 <div className="relative overflow-hidden rounded-lg mb-4 bg-gradient-to-br from-gray-50 to-gray-200">
                   <Image
-                    src="/permis-a2-kawasaki.jpg"
+                    src="/permis-a2-kawasaki.webp"
                     alt={t.licenseCards.a2Title}
                     width={1200}
                     height={900}
@@ -576,19 +625,19 @@ export default function HomePage() {
             <div className="grid sm:grid-cols-3 gap-4">
               {[
                 {
-                  src: "/permis-am-yamaha-neos.jpg",
+                  src: "/permis-am-yamaha-neos.webp",
                   title: t.licenseCards.amTitle,
                   description: t.licenseCards.amDescription,
                   age: t.licenseCards.amAge,
                 },
                 {
-                  src: "/permis-a1-honda.jpg",
+                  src: "/permis-a1-honda.webp",
                   title: t.licenseCards.a1Title,
                   description: t.licenseCards.a1Description,
                   age: t.licenseCards.a1Age,
                 },
                 {
-                  src: "/permis-a-yamaha-mt07.jpg",
+                  src: "/permis-a-yamaha-mt07.webp",
                   title: t.licenseCards.aTitle,
                   description: t.licenseCards.aDescription,
                   age: t.licenseCards.aAge,

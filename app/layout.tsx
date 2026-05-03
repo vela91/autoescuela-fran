@@ -204,7 +204,7 @@ html {
         <meta name="language" content="es-ES,ca-ES,en-GB" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <LanguageProvider>
           {children}
         </LanguageProvider>
