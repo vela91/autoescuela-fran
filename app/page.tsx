@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   ArrowRight,
+  Bike,
   Car,
   CheckCircle2,
   Clock,
@@ -32,13 +33,13 @@ const translations = {
       "Resultats excel·lents als exàmens oficials de la DGT.",
       "Autoescola recomanada per antics alumnes.",
     ],
-    heroImageAlt: "Equip d'Autoescola Fran amb alumnes a Salou",
+    heroImageAlt: "Flota de cotxes d'Autoescola Fran a Salou",
     heroButton: "VEURE PERMISOS",
     heroSecondaryButton: "Parla amb nosaltres",
     quickAccessButton: "TEVES NOTES D'EXAMEN",
     intensiveBanner: {
-      title: "Curs intensiu gener - Inscripcions obertes!",
-      cta: "Reserva la teva plaça.",
+      title: "Curs intensiu maig - 16h a 20h",
+      cta: "Reserva la teva plaça",
     },
     automaticCarBanner: {
       title: "Pròximament: Cotxe automàtic!",
@@ -61,6 +62,27 @@ const translations = {
         "Professionals amb anys d'experiència i mètodes d'ensenyament eficaços.",
     },
     featuredLicenses: "Permisos Destacats",
+    licenseCards: {
+      comingSoonHeading: "Pròximament",
+      newBadge: "Novetat!",
+      available: "Ja disponible",
+      cta: "Més Informació",
+      bTitle: "Permís B",
+      bDescription: "Carnet de cotxe. Per a vehicles fins a 3.500kg.",
+      bAge: "18 anys",
+      a2Title: "Permís A2",
+      a2Description: "Motos fins 35kW. Ja autoritzat.",
+      a2Age: "18 anys",
+      amTitle: "Permís AM",
+      amDescription: "Ciclomotor 50cc.",
+      amAge: "15 anys",
+      a1Title: "Permís A1",
+      a1Description: "Motos fins 125cc.",
+      a1Age: "16 anys",
+      aTitle: "Permís A",
+      aDescription: "Sense límit de cilindrada. +2 anys del A2.",
+      aAge: "20 anys",
+    },
     testimonials: "Testimonis",
     locationTitle: "Troba'ns a Salou",
     locationDescription:
@@ -79,13 +101,13 @@ const translations = {
       "Alto índice de aprobados en los exámenes oficiales de la DGT.",
       "Autoescuela recomendada por antiguos alumnos.",
     ],
-    heroImageAlt: "Equipo de Autoescola Fran con alumnos en Salou",
+    heroImageAlt: "Flota de coches de Autoescola Fran en Salou",
     heroButton: "VER PERMISOS",
     heroSecondaryButton: "Habla con nosotros",
     quickAccessButton: "TUS NOTAS DE EXAMEN",
     intensiveBanner: {
-      title: "Curso intensivo enero - ¡Inscripciones abiertas!",
-      cta: "Reserva tu plaza.",
+      title: "Curso intensivo mayo - 16h a 20h",
+      cta: "Reserva tu plaza",
     },
     automaticCarBanner: {
       title: "¡Próximamente: Coche automático!",
@@ -108,6 +130,27 @@ const translations = {
         "Profesionales con años de experiencia y métodos de enseñanza eficaces.",
     },
     featuredLicenses: "Permisos Destacados",
+    licenseCards: {
+      comingSoonHeading: "Próximamente",
+      newBadge: "¡Novedad!",
+      available: "Ya disponible",
+      cta: "Más Información",
+      bTitle: "Permiso B",
+      bDescription: "Carnet de coche. Para vehículos hasta 3.500kg.",
+      bAge: "18 años",
+      a2Title: "Permiso A2",
+      a2Description: "Motos hasta 35kW. Ya autorizado.",
+      a2Age: "18 años",
+      amTitle: "Permiso AM",
+      amDescription: "Ciclomotor 50cc.",
+      amAge: "15 años",
+      a1Title: "Permiso A1",
+      a1Description: "Motos hasta 125cc.",
+      a1Age: "16 años",
+      aTitle: "Permiso A",
+      aDescription: "Sin límite de cilindrada. +2 años del A2.",
+      aAge: "20 años",
+    },
     testimonials: "Testimonios",
     locationTitle: "Encuéntranos en Salou",
     locationDescription:
@@ -126,13 +169,13 @@ const translations = {
       "Outstanding pass rates for official DGT exams.",
       "Recommended by former students.",
     ],
-    heroImageAlt: "Autoescola Fran instructors with students in Salou",
+    heroImageAlt: "Autoescola Fran driving school fleet in Salou",
     heroButton: "VIEW LICENSES",
     heroSecondaryButton: "Talk to us",
     quickAccessButton: "YOUR EXAM RESULTS",
     intensiveBanner: {
-      title: "January intensive course - Registrations open!",
-      cta: "Reserve your spot.",
+      title: "May intensive course - 4pm to 8pm",
+      cta: "Reserve your spot",
     },
     automaticCarBanner: {
       title: "Coming soon: Automatic car!",
@@ -153,6 +196,27 @@ const translations = {
         "Professionals with years of experience and effective teaching methods.",
     },
     featuredLicenses: "Featured Licenses",
+    licenseCards: {
+      comingSoonHeading: "Coming soon",
+      newBadge: "New!",
+      available: "Now available",
+      cta: "More Info",
+      bTitle: "Class B",
+      bDescription: "Car license. Vehicles up to 3,500kg.",
+      bAge: "18 years",
+      a2Title: "Class A2",
+      a2Description: "Motorcycles up to 35kW. Now licensed.",
+      a2Age: "18 years",
+      amTitle: "Class AM",
+      amDescription: "50cc moped.",
+      amAge: "15 years",
+      a1Title: "Class A1",
+      a1Description: "Motorcycles up to 125cc.",
+      a1Age: "16 years",
+      aTitle: "Class A",
+      aDescription: "No engine displacement limit. +2 years from A2.",
+      aAge: "20 years",
+    },
     testimonials: "Testimonials",
     locationTitle: "Find us in Salou",
     locationDescription:
@@ -283,10 +347,10 @@ export default function HomePage() {
             <div className="relative">
               <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[3rem] bg-gradient-to-tr from-yellow-500/25 via-yellow-500/10 to-transparent blur-3xl" />
               <Image
-                src="/driving-school-team.png"
+                src="/hero-flota-autoescola-fran.jpg"
                 alt={t.heroImageAlt}
-                width={640}
-                height={480}
+                width={1600}
+                height={1067}
                 priority
                 className="w-full rounded-[2.5rem] border border-yellow-500/20 object-cover shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -296,11 +360,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Automatic Car Banner - NEW */}
-      <section className="py-16 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden border-y-4 border-yellow-400">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/10 to-transparent"></div>
-        </div>
+      {/* Automatic Car Banner */}
+      <section className="relative py-20 md:py-28 overflow-hidden border-y-4 border-yellow-400">
+        <Image
+          src="/banner-cotxe-automatic.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-6">
@@ -311,10 +382,10 @@ export default function HomePage() {
                 <div className="absolute -inset-2 bg-yellow-400 rounded-full opacity-30 animate-ping"></div>
               </div>
             </div>
-            <h2 className="text-4xl md:text-6xl font-black text-yellow-400 mb-4 leading-tight uppercase tracking-wider">
+            <h2 className="text-4xl md:text-6xl font-black text-yellow-400 mb-4 leading-tight uppercase tracking-wider drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
               {t.automaticCarBanner.title}
             </h2>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white max-w-2xl mx-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
               {t.automaticCarBanner.description}
             </p>
             <div className="mt-8 flex justify-center">
@@ -422,32 +493,137 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-center mb-12 text-white">
             {t.featuredLicenses}
           </h2>
-          <div className="flex justify-center">
-            <Card className="group transition-all duration-300 max-w-md w-full bg-gray-800 border border-gray-700 hover:border-yellow-400 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
+
+          {/* Available licenses */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-14">
+            <Card className="group transition-all duration-300 bg-gray-800 border border-gray-700 hover:border-yellow-400 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
               <CardContent className="p-6">
-                <div className="overflow-hidden rounded-lg mb-4">
+                <div className="relative overflow-hidden rounded-lg mb-4">
                   <Image
-                    src="/car-license-b-permit.png"
-                    alt="Permís B"
-                    width={400}
-                    height={300}
-                    className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                    src="/permis-b-vw-polo.jpg"
+                    alt={t.licenseCards.bTitle}
+                    width={1400}
+                    height={933}
+                    className="w-full h-56 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                   />
+                  <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                    <CheckCircle2 className="h-3.5 w-3.5" />
+                    {t.licenseCards.available}
+                  </span>
                 </div>
-                <h3 className="text-2xl font-semibold mb-2 text-white group-hover:text-yellow-400 transition-colors">
-                  Permís B
-                </h3>
+                <div className="flex items-baseline justify-between mb-2 gap-3">
+                  <h3 className="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
+                    {t.licenseCards.bTitle}
+                  </h3>
+                  <span className="text-sm font-bold text-yellow-400 whitespace-nowrap">
+                    {t.licenseCards.bAge}
+                  </span>
+                </div>
                 <p className="text-gray-300 mb-4">
-                  Carnet de cotxe. El més sol·licitat per a vehicles fins a
-                  3.500kg.
+                  {t.licenseCards.bDescription}
                 </p>
                 <Link href="/permisos">
                   <Button className="bg-yellow-400 hover:bg-yellow-500 text-black w-full font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105">
-                    Més Informació
+                    {t.licenseCards.cta}
                   </Button>
                 </Link>
               </CardContent>
             </Card>
+
+            <Card className="group transition-all duration-300 bg-gray-800 border-2 border-yellow-400/50 hover:border-yellow-400 hover:-translate-y-2 shadow-lg shadow-yellow-400/10 hover:shadow-2xl hover:shadow-yellow-400/20">
+              <CardContent className="p-6">
+                <div className="relative overflow-hidden rounded-lg mb-4 bg-gradient-to-br from-gray-50 to-gray-200">
+                  <Image
+                    src="/permis-a2-kawasaki.jpg"
+                    alt={t.licenseCards.a2Title}
+                    width={1200}
+                    height={900}
+                    className="w-full h-56 object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                    <CheckCircle2 className="h-3.5 w-3.5" />
+                    {t.licenseCards.available}
+                  </span>
+                  <span className="absolute top-3 right-3 inline-flex items-center bg-yellow-400 text-black text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-lg animate-pulse">
+                    {t.licenseCards.newBadge}
+                  </span>
+                </div>
+                <div className="flex items-baseline justify-between mb-2 gap-3">
+                  <h3 className="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
+                    {t.licenseCards.a2Title}
+                  </h3>
+                  <span className="text-sm font-bold text-yellow-400 whitespace-nowrap">
+                    {t.licenseCards.a2Age}
+                  </span>
+                </div>
+                <p className="text-gray-300 mb-4">
+                  {t.licenseCards.a2Description}
+                </p>
+                <Link href="/permisos">
+                  <Button className="bg-yellow-400 hover:bg-yellow-500 text-black w-full font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105">
+                    {t.licenseCards.cta}
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Coming soon licenses */}
+          <div className="max-w-5xl mx-auto">
+            <h3 className="text-base md:text-lg text-yellow-400 text-center mb-6 uppercase tracking-[0.25em] font-bold">
+              {t.licenseCards.comingSoonHeading}
+            </h3>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {[
+                {
+                  src: "/permis-am-yamaha-neos.jpg",
+                  title: t.licenseCards.amTitle,
+                  description: t.licenseCards.amDescription,
+                  age: t.licenseCards.amAge,
+                },
+                {
+                  src: "/permis-a1-honda.jpg",
+                  title: t.licenseCards.a1Title,
+                  description: t.licenseCards.a1Description,
+                  age: t.licenseCards.a1Age,
+                },
+                {
+                  src: "/permis-a-yamaha-mt07.jpg",
+                  title: t.licenseCards.aTitle,
+                  description: t.licenseCards.aDescription,
+                  age: t.licenseCards.aAge,
+                },
+              ].map((item) => (
+                <Card
+                  key={item.title}
+                  className="group transition-all duration-300 bg-gray-800/60 border border-gray-700 hover:border-yellow-400/60 hover:-translate-y-1 shadow-md"
+                >
+                  <CardContent className="p-4">
+                    <div className="relative overflow-hidden rounded-lg mb-3 bg-gradient-to-br from-gray-50 to-gray-200">
+                      <Image
+                        src={item.src}
+                        alt={item.title}
+                        width={1200}
+                        height={900}
+                        className="w-full h-40 object-contain p-2 grayscale-[0.2] transition-all duration-300 group-hover:grayscale-0 group-hover:scale-105"
+                      />
+                      <span className="absolute top-2 left-2 inline-flex items-center bg-yellow-400 text-black text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-md">
+                        {t.licenseCards.comingSoonHeading}
+                      </span>
+                    </div>
+                    <div className="flex items-baseline justify-between gap-2 mb-1">
+                      <h4 className="text-lg font-semibold text-white group-hover:text-yellow-400 transition-colors">
+                        {item.title}
+                      </h4>
+                      <span className="text-xs font-bold text-yellow-400 whitespace-nowrap">
+                        {item.age}
+                      </span>
+                    </div>
+                    <p className="text-sm text-gray-400">{item.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -36,3 +36,6 @@ next-env.d.ts
 # IDE
 .vscode
 .idea
+
+# Raw photo source (do not commit — only optimized versions go to /public)
+/autoescolafran-photo/
