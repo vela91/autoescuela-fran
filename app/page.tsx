@@ -39,8 +39,8 @@ const translations = {
     heroSecondaryButton: "Parla amb nosaltres",
     quickAccessButton: "TEVES NOTES D'EXAMEN",
     intensiveBanner: {
-      title: "Curs intensiu maig - 16h a 20h",
-      cta: "Reserva la teva plaça",
+      title: "Curs intensiu juny/juliol - 16h a 20h",
+      cta: "Reserva la teva plaça. Pregunta a l'oficina.",
     },
     intensiveCourse: {
       label: "Oferta activa",
@@ -48,12 +48,12 @@ const translations = {
       description:
         "Aprèn a conduir en poques setmanes amb classes diàries, atenció personalitzada i tot el suport per superar els exàmens de la DGT.",
       monthLabel: "Mes",
-      monthValue: "Maig",
+      monthValue: "Juny/Juliol",
       scheduleLabel: "Horari",
       scheduleValue: "16h - 20h",
       placesLabel: "Places",
       placesValue: "Limitades",
-      cta: "Reserva la teva plaça",
+      cta: "Reserva la teva plaça. Pregunta a l'oficina.",
     },
     automaticCarBanner: {
       title: "Automàtic",
@@ -120,8 +120,8 @@ const translations = {
     heroSecondaryButton: "Habla con nosotros",
     quickAccessButton: "TUS NOTAS DE EXAMEN",
     intensiveBanner: {
-      title: "Curso intensivo mayo - 16h a 20h",
-      cta: "Reserva tu plaza",
+      title: "Curso intensivo junio/julio - 16h a 20h",
+      cta: "Reserve su plaza. Pregunte en la oficina.",
     },
     intensiveCourse: {
       label: "Oferta activa",
@@ -129,12 +129,12 @@ const translations = {
       description:
         "Aprende a conducir en pocas semanas con clases diarias, atención personalizada y todo el apoyo para superar los exámenes de la DGT.",
       monthLabel: "Mes",
-      monthValue: "Mayo",
+      monthValue: "Junio/Julio",
       scheduleLabel: "Horario",
       scheduleValue: "16h - 20h",
       placesLabel: "Plazas",
       placesValue: "Limitadas",
-      cta: "Reserva tu plaza",
+      cta: "Reserve su plaza. Pregunte en la oficina.",
     },
     automaticCarBanner: {
       title: "Automático",
@@ -201,8 +201,8 @@ const translations = {
     heroSecondaryButton: "Talk to us",
     quickAccessButton: "YOUR EXAM RESULTS",
     intensiveBanner: {
-      title: "May intensive course - 4pm to 8pm",
-      cta: "Reserve your spot",
+      title: "June/July intensive course - 4pm to 8pm",
+      cta: "Reserve your spot. Ask at the office.",
     },
     intensiveCourse: {
       label: "Active offer",
@@ -210,12 +210,12 @@ const translations = {
       description:
         "Learn to drive in a few weeks with daily classes, personalised support and everything you need to pass the official DGT exams.",
       monthLabel: "Month",
-      monthValue: "May",
+      monthValue: "June/July",
       scheduleLabel: "Schedule",
       scheduleValue: "4pm - 8pm",
       placesLabel: "Spots",
       placesValue: "Limited",
-      cta: "Reserve your spot",
+      cta: "Reserve your spot. Ask at the office.",
     },
     automaticCarBanner: {
       title: "Automatic",
