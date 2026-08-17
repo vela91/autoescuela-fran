@@ -119,12 +119,12 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       key: 'B',
       status: 'available',
       name: 'Permís B',
-      description: 'Automòbils fins a 3.500kg i fins a 9 places',
+      description: "Automòbils fins a 3.500kg i fins a 9 places, amb canvi manual i automàtic",
       age: '18 anys',
       duration: '3-6 mesos',
       image: '/permis-b-vw-polo.webp',
       details:
-        'El permís B és el carnet de conduir més sol·licitat i permet conduir turismes, furgonetes i vehicles de fins a 3.500kg de massa màxima autoritzada i fins a 9 places (inclòs el conductor).',
+        'El permís B és el carnet de conduir més sol·licitat i permet conduir turismes, furgonetes i vehicles de fins a 3.500kg de massa màxima autoritzada i fins a 9 places (inclòs el conductor). Pots preparar-lo amb vehicle de canvi manual o automàtic.',
       badge: 'popular',
     },
     {
@@ -178,12 +178,12 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       key: 'B',
       status: 'available',
       name: 'Permiso B',
-      description: 'Automóviles hasta 3.500kg y hasta 9 plazas',
+      description: "Automóviles hasta 3.500kg y hasta 9 plazas, con cambio manual y automático",
       age: '18 años',
       duration: '3-6 meses',
       image: '/permis-b-vw-polo.webp',
       details:
-        'El permiso B es el carnet de conducir más solicitado y permite conducir turismos, furgonetas y vehículos de hasta 3.500kg de masa máxima autorizada y hasta 9 plazas (incluido el conductor).',
+        'El permiso B es el carnet de conducir más solicitado y permite conducir turismos, furgonetas y vehículos de hasta 3.500kg de masa máxima autorizada y hasta 9 plazas (incluido el conductor). Puedes prepararlo con vehículo de cambio manual o automático.',
       badge: 'popular',
     },
     {
@@ -237,12 +237,12 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       key: 'B',
       status: 'available',
       name: 'Class B',
-      description: 'Cars up to 3,500kg and up to 9 seats',
+      description: "Cars up to 3,500kg and up to 9 seats, manual and automatic",
       age: '18 years',
       duration: '3-6 months',
       image: '/permis-b-vw-polo.webp',
       details:
-        'The B license is the most requested driving license and allows you to drive passenger cars, vans and vehicles up to 3,500kg maximum authorized mass and up to 9 seats (including the driver).',
+        'The B license is the most requested driving license and allows you to drive passenger cars, vans and vehicles up to 3,500kg maximum authorized mass and up to 9 seats (including the driver). You can take it with a manual or an automatic car.',
       badge: 'popular',
     },
     {
