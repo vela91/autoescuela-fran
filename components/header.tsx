@@ -115,9 +115,11 @@ export default function Header() {
                 EN
               </button>
             </div>
-            <Button className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold px-8 py-2.5 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.6)] hover:shadow-[0_0_30px_rgba(250,204,21,1)] hover:scale-105 border-2 border-yellow-300">
-              {nav.cta}
-            </Button>
+            <Link href="/contacte">
+              <Button className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold px-8 py-2.5 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.6)] hover:shadow-[0_0_30px_rgba(250,204,21,1)] hover:scale-105 border-2 border-yellow-300">
+                {nav.cta}
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -133,22 +135,22 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-800">
             <nav className="flex flex-col space-y-4">
-              <Link href="/" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors">
+              <Link href="/" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
                 {nav.home}
               </Link>
-              <Link href="/sobre-nosaltres" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors">
+              <Link href="/sobre-nosaltres" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
                 {nav.about}
               </Link>
-              <Link href="/permisos" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors">
+              <Link href="/permisos" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
                 {nav.licenses}
               </Link>
-              <Link href="/curso-intensivo" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors">
+              <Link href="/curso-intensivo" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
                 {nav.intensiveCourse}
               </Link>
-              <Link href="/contacte" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors">
+              <Link href="/contacte" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
                 {nav.contact}
               </Link>
-              <Link href="/blog" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors">
+              <Link href="/blog" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
                 {nav.blog}
               </Link>
               <div className="flex items-center space-x-2 pt-4">
@@ -174,9 +176,11 @@ export default function Header() {
                   EN
                 </button>
               </div>
-              <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold w-full mt-4 shadow-[0_0_15px_rgba(250,204,21,0.5)] hover:shadow-[0_0_25px_rgba(250,204,21,0.8)] transition-all duration-300">
-                {nav.cta}
-              </Button>
+              <Link href="/contacte" onClick={() => setIsMenuOpen(false)}>
+                <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold w-full mt-4 shadow-[0_0_15px_rgba(250,204,21,0.5)] hover:shadow-[0_0_25px_rgba(250,204,21,0.8)] transition-all duration-300">
+                  {nav.cta}
+                </Button>
+              </Link>
             </nav>
           </div>
         )}

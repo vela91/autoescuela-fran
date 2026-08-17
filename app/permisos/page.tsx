@@ -20,6 +20,7 @@ const translations = {
     practical: 'Pràctic',
     availableHeading: 'Permisos disponibles',
     comingSoonHeading: 'Pròximament',
+    pointsTitle: 'Permís per punts',
     available: 'Ja disponible',
     newBadge: 'Novetat!',
     popularBadge: 'Popular',
@@ -48,6 +49,7 @@ const translations = {
     practical: 'Práctico',
     availableHeading: 'Permisos disponibles',
     comingSoonHeading: 'Próximamente',
+    pointsTitle: 'Permiso por puntos',
     available: 'Ya disponible',
     newBadge: '¡Novedad!',
     popularBadge: 'Popular',
@@ -76,6 +78,7 @@ const translations = {
     practical: 'Practical',
     availableHeading: 'Available licenses',
     comingSoonHeading: 'Coming soon',
+    pointsTitle: 'Points licence',
     available: 'Now available',
     newBadge: 'New!',
     popularBadge: 'Popular',
@@ -125,6 +128,28 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       badge: 'popular',
     },
     {
+      key: 'AM',
+      status: 'available',
+      name: 'Permís AM',
+      description: 'Ciclomotors de fins a 50cc i 45 km/h',
+      age: '15 anys',
+      duration: '-',
+      image: '/permis-am-yamaha-neos.webp',
+      details:
+        'Permet conduir ciclomotors de fins a 50cc i una velocitat màxima de 45 km/h.',
+    },
+    {
+      key: 'A1',
+      status: 'available',
+      name: 'Permís A1',
+      description: 'Motos de fins a 125cc i 11kW de potència',
+      age: '16 anys',
+      duration: '-',
+      image: '/permis-a1-honda.webp',
+      details:
+        'Permet conduir motocicletes de fins a 125cc i fins a 11kW de potència.',
+    },
+    {
       key: 'A2',
       status: 'available',
       name: 'Permís A2',
@@ -137,30 +162,8 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       badge: 'new',
     },
     {
-      key: 'AM',
-      status: 'soon',
-      name: 'Permís AM',
-      description: 'Ciclomotors de fins a 50cc i 45 km/h',
-      age: '15 anys',
-      duration: '-',
-      image: '/permis-am-yamaha-neos.webp',
-      details:
-        'Permet conduir ciclomotors de fins a 50cc i una velocitat màxima de 45 km/h. Aviat estarà disponible a la nostra autoescola.',
-    },
-    {
-      key: 'A1',
-      status: 'soon',
-      name: 'Permís A1',
-      description: 'Motos de fins a 125cc i 11kW de potència',
-      age: '16 anys',
-      duration: '-',
-      image: '/permis-a1-honda.webp',
-      details:
-        'Permet conduir motocicletes de fins a 125cc i fins a 11kW de potència. Aviat estarà disponible a la nostra autoescola.',
-    },
-    {
       key: 'A',
-      status: 'soon',
+      status: 'available',
       name: 'Permís A',
       description: 'Motos sense límit de cilindrada ni potència',
       age: '20 anys',
@@ -184,6 +187,28 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       badge: 'popular',
     },
     {
+      key: 'AM',
+      status: 'available',
+      name: 'Permiso AM',
+      description: 'Ciclomotores de hasta 50cc y 45 km/h',
+      age: '15 años',
+      duration: '-',
+      image: '/permis-am-yamaha-neos.webp',
+      details:
+        'Permite conducir ciclomotores de hasta 50cc y una velocidad máxima de 45 km/h.',
+    },
+    {
+      key: 'A1',
+      status: 'available',
+      name: 'Permiso A1',
+      description: 'Motos de hasta 125cc y 11kW de potencia',
+      age: '16 años',
+      duration: '-',
+      image: '/permis-a1-honda.webp',
+      details:
+        'Permite conducir motocicletas de hasta 125cc y hasta 11kW de potencia.',
+    },
+    {
       key: 'A2',
       status: 'available',
       name: 'Permiso A2',
@@ -196,30 +221,8 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       badge: 'new',
     },
     {
-      key: 'AM',
-      status: 'soon',
-      name: 'Permiso AM',
-      description: 'Ciclomotores de hasta 50cc y 45 km/h',
-      age: '15 años',
-      duration: '-',
-      image: '/permis-am-yamaha-neos.webp',
-      details:
-        'Permite conducir ciclomotores de hasta 50cc y una velocidad máxima de 45 km/h. Pronto estará disponible en nuestra autoescuela.',
-    },
-    {
-      key: 'A1',
-      status: 'soon',
-      name: 'Permiso A1',
-      description: 'Motos de hasta 125cc y 11kW de potencia',
-      age: '16 años',
-      duration: '-',
-      image: '/permis-a1-honda.webp',
-      details:
-        'Permite conducir motocicletas de hasta 125cc y hasta 11kW de potencia. Pronto estará disponible en nuestra autoescuela.',
-    },
-    {
       key: 'A',
-      status: 'soon',
+      status: 'available',
       name: 'Permiso A',
       description: 'Motos sin límite de cilindrada ni potencia',
       age: '20 años',
@@ -243,6 +246,26 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       badge: 'popular',
     },
     {
+      key: 'AM',
+      status: 'available',
+      name: 'Class AM',
+      description: 'Mopeds up to 50cc and 45 km/h',
+      age: '15 years',
+      duration: '-',
+      image: '/permis-am-yamaha-neos.webp',
+      details: 'Lets you ride mopeds up to 50cc with a top speed of 45 km/h.',
+    },
+    {
+      key: 'A1',
+      status: 'available',
+      name: 'Class A1',
+      description: 'Motorcycles up to 125cc and 11kW',
+      age: '16 years',
+      duration: '-',
+      image: '/permis-a1-honda.webp',
+      details: 'Lets you ride motorcycles up to 125cc and up to 11kW.',
+    },
+    {
       key: 'A2',
       status: 'available',
       name: 'Class A2',
@@ -255,30 +278,8 @@ const licensesByLanguage: Record<'ca' | 'es' | 'en', License[]> = {
       badge: 'new',
     },
     {
-      key: 'AM',
-      status: 'soon',
-      name: 'Class AM',
-      description: 'Mopeds up to 50cc and 45 km/h',
-      age: '15 years',
-      duration: '-',
-      image: '/permis-am-yamaha-neos.webp',
-      details:
-        'Lets you ride mopeds up to 50cc with a top speed of 45 km/h. Coming soon to our driving school.',
-    },
-    {
-      key: 'A1',
-      status: 'soon',
-      name: 'Class A1',
-      description: 'Motorcycles up to 125cc and 11kW',
-      age: '16 years',
-      duration: '-',
-      image: '/permis-a1-honda.webp',
-      details:
-        'Lets you ride motorcycles up to 125cc and up to 11kW. Coming soon to our driving school.',
-    },
-    {
       key: 'A',
-      status: 'soon',
+      status: 'available',
       name: 'Class A',
       description: 'Motorcycles with no displacement or power limit',
       age: '20 years',
@@ -295,7 +296,6 @@ export default function LicensesPage() {
   const t = translations[language]
   const licenses = licensesByLanguage[language]
   const available = licenses.filter((l) => l.status === 'available')
-  const soon = licenses.filter((l) => l.status === 'soon')
 
   return (
     <div className="min-h-screen bg-black">
@@ -329,6 +329,8 @@ export default function LicensesPage() {
                     license.badge === 'new'
                       ? 'border-2 border-yellow-400 shadow-yellow-400/20'
                       : 'border-2 border-yellow-400/40 shadow-yellow-400/10'
+                  } ${
+                    isCar ? 'lg:col-span-2' : ''
                   } bg-gray-800 hover:shadow-yellow-400/30 transition-all duration-300`}
                 >
                   <CardContent className="p-6 md:p-8">
@@ -350,7 +352,7 @@ export default function LicensesPage() {
                           />
                         </div>
                         {license.badge === 'new' && (
-                          <span className="absolute top-3 right-3 inline-flex items-center bg-yellow-400 text-black text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-lg animate-pulse">
+                          <span className="absolute bottom-3 right-3 inline-flex items-center bg-yellow-400 text-black text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-lg animate-pulse">
                             {t.newBadge}
                           </span>
                         )}
@@ -418,44 +420,14 @@ export default function LicensesPage() {
               {t.comingSoonHeading}
             </h2>
             <div className="w-16 h-1 bg-yellow-400 mx-auto mb-10 rounded-full" />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {soon.map((license) => (
-                <Card
-                  key={license.key}
-                  className="group bg-gray-900 border border-gray-800 hover:border-yellow-400/60 transition-all duration-300 hover:-translate-y-1"
-                >
-                  <CardContent className="p-5">
-                    <div className="relative overflow-hidden rounded-lg mb-4 bg-gradient-to-br from-gray-50 to-gray-200">
-                      <Image
-                        src={license.image}
-                        alt={license.name}
-                        width={1200}
-                        height={900}
-                        className="w-full h-44 object-contain p-2 grayscale-[0.2] transition-all duration-300 group-hover:grayscale-0 group-hover:scale-105"
-                      />
-                      <span className="absolute top-2 left-2 inline-flex items-center gap-1.5 bg-yellow-400 text-black text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
-                        <Clock className="h-3 w-3" />
-                        {t.comingSoonHeading}
-                      </span>
-                    </div>
-                    <div className="flex items-baseline justify-between gap-2 mb-2">
-                      <h3 className="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">
-                        {license.name}
-                      </h3>
-                      <span className="text-sm font-bold text-yellow-400 whitespace-nowrap">
-                        {license.age}
-                      </span>
-                    </div>
-                    <p className="text-sm text-gray-400 mb-3">
-                      {license.description}
-                    </p>
-                    <p className="text-xs text-gray-500 leading-relaxed">
-                      {license.details}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <Card className="max-w-sm mx-auto bg-gray-900 border border-gray-800">
+              <CardContent className="p-6 flex items-center justify-center gap-3">
+                <Clock className="h-6 w-6 text-yellow-400 shrink-0" />
+                <h3 className="text-xl font-bold text-white">
+                  {t.pointsTitle}
+                </h3>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

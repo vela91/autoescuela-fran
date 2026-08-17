@@ -12,7 +12,7 @@ import Link from 'next/link'
 
 const translations = {
   ca: {
-    title: "Curs Intensiu Juny/Juliol - Inscripcions Obertes!",
+    title: "Curs Intensiu de Setembre - Inscripcions Obertes!",
     subtitle: "Prepara't per a l'examen teòric amb classes diàries",
     description: "Els nostres cursos intensius estan dissenyats per a persones que necessiten obtenir el carnet de conduir ràpidament. Amb classes diàries i professors experts, maximitzem el teu aprenentatge en el mínim temps possible.",
     nextCourse: "Pròxim Curs",
@@ -71,12 +71,12 @@ const translations = {
         description: "Presenta't a l'examen oficial quan estiguis preparat"
       }
     ],
-    cta: "Reserva la teva plaça per al curs de juny/juliol",
+    cta: "Reserva la teva plaça per al curs de setembre",
     ctaButton: "PREGUNTA A L'OFICINA",
     testimonialTitle: "Testimonis dels Nostres Alumnes"
   },
   es: {
-    title: "Curso Intensivo Junio/Julio - ¡Inscripciones Abiertas!",
+    title: "Curso Intensivo de Septiembre - ¡Inscripciones Abiertas!",
     subtitle: "Prepárate para el examen teórico con clases diarias",
     description: "Nuestros cursos intensivos están diseñados para personas que necesitan obtener el carnet de conducir rápidamente. Con clases diarias y profesores expertos, maximizamos tu aprendizaje en el mínimo tiempo posible.",
     nextCourse: "Próximo Curso",
@@ -135,12 +135,12 @@ const translations = {
         description: "Preséntate al examen oficial cuando estés preparado"
       }
     ],
-    cta: "Reserve su plaza para el curso de junio/julio",
+    cta: "Reserve su plaza para el curso de septiembre",
     ctaButton: "PREGUNTE EN LA OFICINA",
     testimonialTitle: "Testimonios de Nuestros Alumnos"
   },
   en: {
-    title: "June/July Intensive Course - Registrations Open!",
+    title: "September Intensive Course - Registrations Open!",
     subtitle: "Prepare for the theory exam with daily classes",
     description: "Our intensive courses are designed for people who need to get their driver's license quickly. With daily classes and expert teachers, we maximize your learning in the minimum time possible.",
     nextCourse: "Next Course",
@@ -199,7 +199,7 @@ const translations = {
         description: "Take the official exam when you're ready"
       }
     ],
-    cta: "Reserve your spot for the June/July course",
+    cta: "Reserve your spot for the September course",
     ctaButton: "ASK AT THE OFFICE",
     testimonialTitle: "Testimonials from Our Students"
   }

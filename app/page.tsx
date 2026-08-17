@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   ArrowRight,
+  Award,
   Bike,
   Calendar,
   Car,
@@ -39,7 +40,7 @@ const translations = {
     heroSecondaryButton: "Parla amb nosaltres",
     quickAccessButton: "TEVES NOTES D'EXAMEN",
     intensiveBanner: {
-      title: "Curs intensiu juny/juliol - 16h a 20h",
+      title: "Curs intensiu de setembre - 16h a 20h",
       cta: "Reserva la teva plaça. Pregunta a l'oficina.",
     },
     intensiveCourse: {
@@ -48,7 +49,7 @@ const translations = {
       description:
         "Aprèn a conduir en poques setmanes amb classes diàries, atenció personalitzada i tot el suport per superar els exàmens de la DGT.",
       monthLabel: "Mes",
-      monthValue: "Juny/Juliol",
+      monthValue: "Setembre",
       scheduleLabel: "Horari",
       scheduleValue: "16h - 20h",
       placesLabel: "Places",
@@ -96,6 +97,7 @@ const translations = {
       aTitle: "Permís A",
       aDescription: "Sense límit de cilindrada. +2 anys del A2.",
       aAge: "20 anys",
+      pointsTitle: "Permís per punts",
     },
     testimonials: "Testimonis",
     locationTitle: "Troba'ns a Salou",
@@ -120,7 +122,7 @@ const translations = {
     heroSecondaryButton: "Habla con nosotros",
     quickAccessButton: "TUS NOTAS DE EXAMEN",
     intensiveBanner: {
-      title: "Curso intensivo junio/julio - 16h a 20h",
+      title: "Curso intensivo de septiembre - 16h a 20h",
       cta: "Reserve su plaza. Pregunte en la oficina.",
     },
     intensiveCourse: {
@@ -129,7 +131,7 @@ const translations = {
       description:
         "Aprende a conducir en pocas semanas con clases diarias, atención personalizada y todo el apoyo para superar los exámenes de la DGT.",
       monthLabel: "Mes",
-      monthValue: "Junio/Julio",
+      monthValue: "Septiembre",
       scheduleLabel: "Horario",
       scheduleValue: "16h - 20h",
       placesLabel: "Plazas",
@@ -177,6 +179,7 @@ const translations = {
       aTitle: "Permiso A",
       aDescription: "Sin límite de cilindrada. +2 años del A2.",
       aAge: "20 años",
+      pointsTitle: "Permiso por puntos",
     },
     testimonials: "Testimonios",
     locationTitle: "Encuéntranos en Salou",
@@ -201,7 +204,7 @@ const translations = {
     heroSecondaryButton: "Talk to us",
     quickAccessButton: "YOUR EXAM RESULTS",
     intensiveBanner: {
-      title: "June/July intensive course - 4pm to 8pm",
+      title: "September intensive course - 4pm to 8pm",
       cta: "Reserve your spot. Ask at the office.",
     },
     intensiveCourse: {
@@ -210,7 +213,7 @@ const translations = {
       description:
         "Learn to drive in a few weeks with daily classes, personalised support and everything you need to pass the official DGT exams.",
       monthLabel: "Month",
-      monthValue: "June/July",
+      monthValue: "September",
       scheduleLabel: "Schedule",
       scheduleValue: "4pm - 8pm",
       placesLabel: "Spots",
@@ -256,6 +259,7 @@ const translations = {
       aTitle: "Class A",
       aDescription: "No engine displacement limit. +2 years from A2.",
       aAge: "20 years",
+      pointsTitle: "Points licence",
     },
     testimonials: "Testimonials",
     locationTitle: "Find us in Salou",
@@ -578,78 +582,123 @@ export default function HomePage() {
             {t.featuredLicenses}
           </h2>
 
-          {/* Available licenses */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-14">
-            <Card className="group transition-all duration-300 bg-gray-800 border border-gray-700 hover:border-yellow-400 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
-              <CardContent className="p-6">
-                <div className="relative overflow-hidden rounded-lg mb-4">
+          {/* Available: car license */}
+          <div className="max-w-5xl mx-auto mb-8">
+            <Card className="group transition-all duration-300 bg-gray-800 border border-gray-700 hover:border-yellow-400 shadow-lg hover:shadow-2xl">
+              <CardContent className="p-6 md:flex md:items-center md:gap-8">
+                <div className="relative overflow-hidden rounded-lg mb-4 md:mb-0 md:w-1/2">
                   <Image
                     src="/permis-b-vw-polo.webp"
                     alt={t.licenseCards.bTitle}
                     width={1400}
                     height={933}
-                    className="w-full h-56 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-56 md:h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                   />
                   <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
                     <CheckCircle2 className="h-3.5 w-3.5" />
                     {t.licenseCards.available}
                   </span>
                 </div>
-                <div className="flex items-baseline justify-between mb-2 gap-3">
-                  <h3 className="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
-                    {t.licenseCards.bTitle}
-                  </h3>
-                  <span className="text-sm font-bold text-yellow-400 whitespace-nowrap">
-                    {t.licenseCards.bAge}
-                  </span>
+                <div className="md:w-1/2">
+                  <div className="flex items-baseline justify-between mb-2 gap-3">
+                    <h3 className="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
+                      {t.licenseCards.bTitle}
+                    </h3>
+                    <span className="text-sm font-bold text-yellow-400 whitespace-nowrap">
+                      {t.licenseCards.bAge}
+                    </span>
+                  </div>
+                  <p className="text-gray-300 mb-4">
+                    {t.licenseCards.bDescription}
+                  </p>
+                  <Link href="/permisos">
+                    <Button className="bg-yellow-400 hover:bg-yellow-500 text-black w-full font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105">
+                      {t.licenseCards.cta}
+                    </Button>
+                  </Link>
                 </div>
-                <p className="text-gray-300 mb-4">
-                  {t.licenseCards.bDescription}
-                </p>
-                <Link href="/permisos">
-                  <Button className="bg-yellow-400 hover:bg-yellow-500 text-black w-full font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105">
-                    {t.licenseCards.cta}
-                  </Button>
-                </Link>
               </CardContent>
             </Card>
+          </div>
 
-            <Card className="group transition-all duration-300 bg-gray-800 border-2 border-yellow-400/50 hover:border-yellow-400 hover:-translate-y-2 shadow-lg shadow-yellow-400/10 hover:shadow-2xl hover:shadow-yellow-400/20">
-              <CardContent className="p-6">
-                <div className="relative overflow-hidden rounded-lg mb-4 bg-gradient-to-br from-gray-50 to-gray-200">
-                  <Image
-                    src="/permis-a2-kawasaki.webp"
-                    alt={t.licenseCards.a2Title}
-                    width={1200}
-                    height={900}
-                    className="w-full h-56 object-contain p-2 transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-                    <CheckCircle2 className="h-3.5 w-3.5" />
-                    {t.licenseCards.available}
-                  </span>
-                  <span className="absolute top-3 right-3 inline-flex items-center bg-yellow-400 text-black text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-lg animate-pulse">
-                    {t.licenseCards.newBadge}
-                  </span>
-                </div>
-                <div className="flex items-baseline justify-between mb-2 gap-3">
-                  <h3 className="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
-                    {t.licenseCards.a2Title}
-                  </h3>
-                  <span className="text-sm font-bold text-yellow-400 whitespace-nowrap">
-                    {t.licenseCards.a2Age}
-                  </span>
-                </div>
-                <p className="text-gray-300 mb-4">
-                  {t.licenseCards.a2Description}
-                </p>
-                <Link href="/permisos">
-                  <Button className="bg-yellow-400 hover:bg-yellow-500 text-black w-full font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105">
-                    {t.licenseCards.cta}
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+          {/* Available: motorcycle licenses (AM, A1, A2, A) */}
+          <div className="max-w-5xl mx-auto mb-14 grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                src: "/permis-am-yamaha-neos.webp",
+                title: t.licenseCards.amTitle,
+                description: t.licenseCards.amDescription,
+                age: t.licenseCards.amAge,
+                isNew: false,
+              },
+              {
+                src: "/permis-a1-honda.webp",
+                title: t.licenseCards.a1Title,
+                description: t.licenseCards.a1Description,
+                age: t.licenseCards.a1Age,
+                isNew: false,
+              },
+              {
+                src: "/permis-a2-kawasaki.webp",
+                title: t.licenseCards.a2Title,
+                description: t.licenseCards.a2Description,
+                age: t.licenseCards.a2Age,
+                isNew: true,
+              },
+              {
+                src: "/permis-a-yamaha-mt07.webp",
+                title: t.licenseCards.aTitle,
+                description: t.licenseCards.aDescription,
+                age: t.licenseCards.aAge,
+                isNew: false,
+              },
+            ].map((item) => (
+              <Card
+                key={item.title}
+                className={`group flex flex-col transition-all duration-300 bg-gray-800 hover:-translate-y-1 shadow-md ${
+                  item.isNew
+                    ? "border-2 border-yellow-400/50 hover:border-yellow-400 shadow-yellow-400/10"
+                    : "border border-gray-700 hover:border-yellow-400/60"
+                }`}
+              >
+                <CardContent className="p-4 flex flex-col flex-1">
+                  <div className="relative overflow-hidden rounded-lg mb-3 bg-gradient-to-br from-gray-50 to-gray-200">
+                    <Image
+                      src={item.src}
+                      alt={item.title}
+                      width={1200}
+                      height={900}
+                      className="w-full h-32 object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <span className="absolute top-2 left-2 inline-flex items-center gap-1 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-md">
+                      <CheckCircle2 className="h-3 w-3" />
+                      {t.licenseCards.available}
+                    </span>
+                    {item.isNew && (
+                      <span className="absolute bottom-2 right-2 inline-flex items-center bg-yellow-400 text-black text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full shadow-lg animate-pulse">
+                        {t.licenseCards.newBadge}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-baseline justify-between gap-2 mb-1">
+                    <h4 className="text-lg font-semibold text-white group-hover:text-yellow-400 transition-colors">
+                      {item.title}
+                    </h4>
+                    <span className="text-xs font-bold text-yellow-400 whitespace-nowrap">
+                      {item.age}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-400 mb-4">
+                    {item.description}
+                  </p>
+                  <Link href="/permisos" className="mt-auto">
+                    <Button className="bg-yellow-400 hover:bg-yellow-500 text-black w-full font-bold text-xs transition-all duration-300 shadow-md hover:shadow-lg">
+                      {t.licenseCards.cta}
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           {/* Coming soon licenses */}
@@ -657,57 +706,14 @@ export default function HomePage() {
             <h3 className="text-base md:text-lg text-yellow-400 text-center mb-6 uppercase tracking-[0.25em] font-bold">
               {t.licenseCards.comingSoonHeading}
             </h3>
-            <div className="grid sm:grid-cols-3 gap-4">
-              {[
-                {
-                  src: "/permis-am-yamaha-neos.webp",
-                  title: t.licenseCards.amTitle,
-                  description: t.licenseCards.amDescription,
-                  age: t.licenseCards.amAge,
-                },
-                {
-                  src: "/permis-a1-honda.webp",
-                  title: t.licenseCards.a1Title,
-                  description: t.licenseCards.a1Description,
-                  age: t.licenseCards.a1Age,
-                },
-                {
-                  src: "/permis-a-yamaha-mt07.webp",
-                  title: t.licenseCards.aTitle,
-                  description: t.licenseCards.aDescription,
-                  age: t.licenseCards.aAge,
-                },
-              ].map((item) => (
-                <Card
-                  key={item.title}
-                  className="group transition-all duration-300 bg-gray-800/60 border border-gray-700 hover:border-yellow-400/60 hover:-translate-y-1 shadow-md"
-                >
-                  <CardContent className="p-4">
-                    <div className="relative overflow-hidden rounded-lg mb-3 bg-gradient-to-br from-gray-50 to-gray-200">
-                      <Image
-                        src={item.src}
-                        alt={item.title}
-                        width={1200}
-                        height={900}
-                        className="w-full h-40 object-contain p-2 grayscale-[0.2] transition-all duration-300 group-hover:grayscale-0 group-hover:scale-105"
-                      />
-                      <span className="absolute top-2 left-2 inline-flex items-center bg-yellow-400 text-black text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-md">
-                        {t.licenseCards.comingSoonHeading}
-                      </span>
-                    </div>
-                    <div className="flex items-baseline justify-between gap-2 mb-1">
-                      <h4 className="text-lg font-semibold text-white group-hover:text-yellow-400 transition-colors">
-                        {item.title}
-                      </h4>
-                      <span className="text-xs font-bold text-yellow-400 whitespace-nowrap">
-                        {item.age}
-                      </span>
-                    </div>
-                    <p className="text-sm text-gray-400">{item.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <Card className="max-w-sm mx-auto bg-gray-800/60 border border-gray-700 shadow-md">
+              <CardContent className="p-5 flex items-center justify-center gap-3">
+                <Award className="h-6 w-6 text-yellow-400 shrink-0" />
+                <h4 className="text-lg font-semibold text-white">
+                  {t.licenseCards.pointsTitle}
+                </h4>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
