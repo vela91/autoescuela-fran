@@ -2,7 +2,16 @@ import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog-posts'
 import { SITE_URL } from '@/lib/site-metadata'
 
-const staticRoutes = ['', '/sobre-nosaltres', '/permisos', '/curso-intensivo', '/contacte', '/blog']
+const staticRoutes = [
+  '',
+  '/sobre-nosaltres',
+  '/permisos',
+  '/curso-intensivo',
+  '/contacte',
+  '/blog',
+  '/avis-legal',
+  '/politica-cookies',
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()

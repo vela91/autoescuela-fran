@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { LanguageProvider } from '@/hooks/use-language'
+import { CookieConsentProvider } from '@/hooks/use-cookie-consent'
+import CookieBanner from '@/components/cookie-banner'
 import {
   SITE_ADDRESS,
   SITE_ALTERNATE_NAMES,
@@ -206,7 +208,10 @@ html {
       </head>
       <body suppressHydrationWarning>
         <LanguageProvider>
-          {children}
+          <CookieConsentProvider>
+            {children}
+            <CookieBanner />
+          </CookieConsentProvider>
         </LanguageProvider>
       </body>
     </html>

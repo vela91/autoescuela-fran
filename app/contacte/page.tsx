@@ -1,9 +1,12 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import GoogleMapEmbed from '@/components/google-map-embed'
 import { useLanguage } from '@/hooks/use-language'
+import { contactFormClause, LEGAL_ROUTES } from '@/lib/legal-content'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -88,13 +91,17 @@ export default function ContactPage() {
     subject: '',
     message: ''
   })
+  const [privacyAccepted, setPrivacyAccepted] = useState(false)
+  const [marketingConsent, setMarketingConsent] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const t = translations[language]
+  const legal = contactFormClause[language]
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!privacyAccepted) return
     setIsLoading(true)
     setSubmitStatus('idle')
 
@@ -105,7 +112,7 @@ export default function ContactPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({ ...formData, privacyAccepted, marketingConsent })
       })
 
       if (response.ok) {
@@ -118,6 +125,8 @@ export default function ContactPage() {
           subject: '',
           message: ''
         })
+        setPrivacyAccepted(false)
+        setMarketingConsent(false)
         // Ocultar el mensaje de éxito después de 5 segundos
         setTimeout(() => setSubmitStatus('idle'), 5000)
       } else {
@@ -311,6 +320,52 @@ export default function ContactPage() {
                       />
                     </div>
 
+                    {/* Información y consentimiento (LSSI / RGPD) */}
+                    <div className="space-y-4 border-t border-gray-700 pt-6">
+                      <p className="text-xs text-gray-400 leading-relaxed">{legal.info}</p>
+
+                      <label
+                        htmlFor="privacyAccepted"
+                        className="flex items-start gap-3 text-sm text-gray-300 cursor-pointer"
+                      >
+                        <input
+                          id="privacyAccepted"
+                          name="privacyAccepted"
+                          type="checkbox"
+                          required
+                          checked={privacyAccepted}
+                          onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                          className="mt-1 h-4 w-4 shrink-0 accent-yellow-400"
+                        />
+                        <span>
+                          {legal.privacyLabel}{' '}
+                          <Link
+                            href={LEGAL_ROUTES.privacy}
+                            target="_blank"
+                            className="text-yellow-400 underline hover:text-yellow-300 transition-colors"
+                          >
+                            {legal.privacyLink}
+                          </Link>
+                          <span className="text-red-400"> *</span>
+                        </span>
+                      </label>
+
+                      <label
+                        htmlFor="marketingConsent"
+                        className="flex items-start gap-3 text-sm text-gray-300 cursor-pointer"
+                      >
+                        <input
+                          id="marketingConsent"
+                          name="marketingConsent"
+                          type="checkbox"
+                          checked={marketingConsent}
+                          onChange={(e) => setMarketingConsent(e.target.checked)}
+                          className="mt-1 h-4 w-4 shrink-0 accent-yellow-400"
+                        />
+                        <span>{legal.marketingLabel}</span>
+                      </label>
+                    </div>
+
                     {/* Mensajes de feedback */}
                     {submitStatus === 'success' && (
                       <div className="bg-green-900/20 border border-green-500 rounded-lg p-4 flex items-center gap-3">
@@ -326,9 +381,13 @@ export default function ContactPage() {
                       </div>
                     )}
 
+                    {!privacyAccepted && (
+                      <p className="text-xs text-gray-500">{legal.privacyRequired}</p>
+                    )}
+
                     <Button
                       type="submit"
-                      disabled={isLoading}
+                      disabled={isLoading || !privacyAccepted}
                       className="bg-yellow-400 hover:bg-yellow-500 text-black w-full py-3 font-bold shadow-lg hover:shadow-yellow-400/50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isLoading ? (
@@ -354,16 +413,7 @@ export default function ContactPage() {
           <h2 className="text-3xl font-bold text-center text-white mb-8">{t.location}</h2>
           <div className="max-w-4xl mx-auto">
             <div className="bg-gray-900 rounded-lg shadow-2xl overflow-hidden border-2 border-gray-800">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.8!2d1.1310763!3d41.0784008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a15baea7a6e4c5%3A0xee1cd0fb3d0d334f!2sAUTOESCOLA%20FRAN.%20En%20Salou.!5e0!3m2!1ses!2ses!4v1640995200000"
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Autoescola Fran - Calle Barcelona 35, local 3, Salou"
-              ></iframe>
+              <GoogleMapEmbed height={450} />
             </div>
           </div>
         </div>

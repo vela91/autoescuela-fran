@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import GoogleMapEmbed from "@/components/google-map-embed";
 import { useLanguage } from "@/hooks/use-language";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -781,16 +782,10 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-gray-800 rounded-lg shadow-xl overflow-hidden border border-gray-700">
               <div className="aspect-video">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.8!2d1.1310763!3d41.0784008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a15baea7a6e4c5%3A0xee1cd0fb3d0d334f!2sAUTOESCOLA%20FRAN.%20En%20Salou.!5e0!3m2!1ses!2ses!4v1640995200000"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
+                <GoogleMapEmbed
+                  fill
                   title="Autoescola Fran - Salou - Calle Barcelona 35, local 3"
-                ></iframe>
+                />
               </div>
               <div className="p-6 text-center bg-gray-800">
                 <Button

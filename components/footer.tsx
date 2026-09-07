@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Facebook, Instagram, MessageCircle } from 'lucide-react'
 import { useLanguage } from '@/hooks/use-language'
+import { LEGAL_ROUTES, legalLinks } from '@/lib/legal-content'
 
 const footerTranslations = {
   ca: {
@@ -35,6 +36,7 @@ const footerTranslations = {
 export default function Footer() {
   const { language } = useLanguage()
   const t = footerTranslations[language]
+  const legal = legalLinks[language]
 
   return (
     <footer className="bg-black text-white py-12">
@@ -111,7 +113,24 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 space-y-4">
+          <nav
+            aria-label={legal.legal}
+            className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm"
+          >
+            <Link
+              href={LEGAL_ROUTES.privacy}
+              className="hover:text-yellow-400 transition-colors"
+            >
+              {legal.privacy}
+            </Link>
+            <Link
+              href={LEGAL_ROUTES.cookies}
+              className="hover:text-yellow-400 transition-colors"
+            >
+              {legal.cookies}
+            </Link>
+          </nav>
           <p>&copy; 2024 Autoescola Fran en Salou. Tots els drets reservats.</p>
         </div>
       </div>

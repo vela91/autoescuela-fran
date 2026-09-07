@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, subject, message } = body;
+    const { name, email, phone, subject, message, privacyAccepted, marketingConsent } = body;
 
     // Validación básica
     if (!name || !email || !subject || !message) {
@@ -22,6 +22,18 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+
+    // El consentimiento de la política de privacidad es obligatorio (RGPD).
+    if (privacyAccepted !== true) {
+      return NextResponse.json(
+        { error: 'Es necesario aceptar la política de privacidad' },
+        { status: 400 }
+      );
+    }
+
+    // Se deja constancia del consentimiento junto con el mensaje recibido.
+    const receivedAt = new Date().toISOString();
+    const marketingText = marketingConsent === true ? 'Sí' : 'No';
 
     // Configurar el contenido del email
     const mailOptions = {
@@ -41,6 +53,10 @@ export async function POST(request: Request) {
         ${message}
 
         ---
+        Política de privacidad aceptada: Sí (${receivedAt})
+        Acepta recibir información comercial: ${marketingText}
+
+        ---
         Este mensaje fue enviado desde el formulario de contacto de autoescolafran.com
       `,
       html: `
@@ -53,6 +69,9 @@ export async function POST(request: Request) {
         <p><strong>Mensaje:</strong></p>
         <p style="white-space: pre-wrap;">${message}</p>
         <br>
+        <hr>
+        <p><strong>Política de privacidad aceptada:</strong> Sí (${receivedAt})</p>
+        <p><strong>Acepta recibir información comercial:</strong> ${marketingText}</p>
         <hr>
         <p style="font-size: 12px; color: #666;">
           Este mensaje fue enviado desde el formulario de contacto de autoescolafran.com
