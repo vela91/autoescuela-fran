@@ -41,7 +41,7 @@ export const LEGAL_HOLDER = {
   nif: '49424840W',
   address: 'Calle Barcelona, 35 local 3, 43840 Salou (Tarragona)',
   email: 'autoescolafransalou@gmail.com',
-  phone: '611 063 438',
+  phone: '610 777 027',
 } as const
 
 const holderLine = `${LEGAL_HOLDER.name}, con CIF/NIF ${LEGAL_HOLDER.nif}`
