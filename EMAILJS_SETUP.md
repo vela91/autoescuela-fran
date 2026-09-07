@@ -39,7 +39,7 @@ Mensaje:
 {{message}}
 
 ---
-Este mensaje fue enviado desde el formulario de contacto de autoescolafran.com
+Este mensaje fue enviado desde el formulario de contacto de autoescolafransalou.es
 ```
 
 **To Email:**

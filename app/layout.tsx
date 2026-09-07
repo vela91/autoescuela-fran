@@ -155,7 +155,7 @@ export default function RootLayout({
       { '@type': 'Language', name: 'Spanish', alternateName: 'es' },
     ],
     sameAs: [
-      'https://autoescuelafran.com',
+      'https://autoescolafransalou.es',
       'https://www.google.com/maps/place/AUTOESCOLA+FRAN.+En+Salou./@41.0784008,1.1285014,17z/data=!3m1!4b1!4m6!3m5!1s0x12a15baea7a6e4c5:0xee1cd0fb3d0d334f!8m2!3d41.0784008!4d1.1310763!16s%2Fg%2F11xtmpmbx8',
     ],
     makesOffer: [

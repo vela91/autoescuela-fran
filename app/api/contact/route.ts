@@ -57,7 +57,7 @@ export async function POST(request: Request) {
         Acepta recibir información comercial: ${marketingText}
 
         ---
-        Este mensaje fue enviado desde el formulario de contacto de autoescolafran.com
+        Este mensaje fue enviado desde el formulario de contacto de autoescolafransalou.es
       `,
       html: `
         <h2>Nuevo mensaje desde el formulario de contacto</h2>
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
         <p><strong>Acepta recibir información comercial:</strong> ${marketingText}</p>
         <hr>
         <p style="font-size: 12px; color: #666;">
-          Este mensaje fue enviado desde el formulario de contacto de autoescolafran.com
+          Este mensaje fue enviado desde el formulario de contacto de autoescolafransalou.es
         </p>
       `
     };

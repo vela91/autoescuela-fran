@@ -1,5 +1,5 @@
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://autoescuelafran.com'
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://autoescolafransalou.es'
 
 export const SITE_NAME = 'Autoescola Fran'
 
