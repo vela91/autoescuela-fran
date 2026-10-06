@@ -98,7 +98,13 @@ export default function Footer() {
               <a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors">
                 <Facebook className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors">
+              <a
+                href="https://www.instagram.com/autoescolafran/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-gray-300 hover:text-yellow-400 transition-colors"
+              >
                 <Instagram className="w-6 h-6" />
               </a>
             </div>
